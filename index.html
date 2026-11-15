@@ -1,6 +1,6 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>Kologrivov Dental Design — дослідження ринку</title>
-<!-- Вводная страница kologrivov.meshkor.io (источник: report/site_intro.html; факты — бриф клиента и сбор данных 2026-11-15) -->
+<!-- Вводная страница kologrivov.meshkor.io (источник: report/site_intro.html; факты — бриф клиента и сбор данных, листопад 2026) -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#231F1E;--ink2:#4A4442;--o:#F5622F;--paper:#F6F3F0;--line:#E6E0DB;--grey:#857C77;--dark:#1A1615}
@@ -40,76 +40,86 @@ h1,h2,h3,b,.k,.num{font-family:"Exo 2",Arial,sans-serif} a{color:inherit} .w{max
 .badge{position:absolute;top:-13px;right:20px;background:var(--o);color:#fff;font:800 12px "Exo 2";letter-spacing:.08em;padding:6px 12px;text-transform:uppercase}
 .foot{background:var(--dark);color:#857C77;font-size:13px;padding:26px 0} .foot .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px} .foot a{color:#cfc8c3;text-decoration:none}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)} .rv.in{opacity:1;transform:none}
+.hero .mark{justify-self:center;width:min(300px,55vw);opacity:.9;animation:fl 7s ease-in-out infinite} @keyframes fl{50%{transform:translateY(-14px)}}
+.scrolldown{position:absolute;left:50%;bottom:22px;width:26px;height:42px;border:2px solid rgba(255,255,255,.35);border-radius:14px;transform:translateX(-50%)}
+.scrolldown:after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--o);animation:sd 1.6s infinite}
+@keyframes sd{0%{opacity:0}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+.cl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px} .cl div{border-top:3px solid var(--ink);padding-top:18px} .cl div.o{border-color:var(--o)}
+.cl i{font:800 26px "Exo 2";font-style:normal;display:block} .cl .o i{color:var(--o)} .cl p{font-size:16.5px;line-height:1.65;color:var(--ink2);margin-top:12px}
+.lst{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px} .lst div{background:#fff;padding:24px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .3s}
+.lst div:hover{transform:translateY(-5px)} .lst i{font:800 32px "Exo 2";font-style:normal;color:var(--o)} .lst b{font-size:18px;line-height:1.25} .lst span{font-size:14.5px;line-height:1.55;color:var(--ink2)}
+.lst.dk div{background:#2A2523} .lst.dk span{color:#cfc8c3}
+.concl{background:var(--o);color:#fff} .concl .k{color:#fff;opacity:.8} .concl .big{font:800 clamp(26px,3.6vw,46px)/1.2 "Exo 2";margin-top:18px;max-width:1050px} .concl .big em{font-style:normal;color:var(--ink)} .concl .lead{color:#fff;opacity:.92}
+@media(max-width:1000px){.cl{grid-template-columns:1fr} .lst{grid-template-columns:1fr 1fr} .hero .mark{width:180px}}
+@media(max-width:640px){.lst{grid-template-columns:1fr}}
 .shot .hero{min-height:900px} .shot .rv{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none} .phone{animation:none}}
 @media(max-width:1000px){.hero .w{grid-template-columns:1fr} .about,.nums{grid-template-columns:1fr 1fr} .pk{grid-template-columns:1fr}}
 @media(max-width:640px){.sec{padding:72px 0} .about{grid-template-columns:1fr} .nums{grid-template-columns:1fr 1fr} .nums div{padding:22px 16px} .quote{grid-template-columns:1fr} .top a.m{display:none}}
 </style></head><body>
 <script>if(/shot/.test(location.search))document.documentElement.className='shot'</script>
-<header class="top"><div class="w"><img src="/assets/kolo_wordmark_dark.png" alt="Kologrivov Dental Design"><a class="m" href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a></div></header>
+<header class="top"><div class="w"><img src="/assets/kolo_wordmark_dark.png" alt="Kologrivov Dental Design"><a class="m" href="https://meshkor.io/">Підготовлено MESHKOR</a></div></header>
 
 <section class="hero"><canvas></canvas><div class="w"><div>
- <div class="k">Дослідження ринку · листопад 2026</div>
- <h1>Як Kologrivov <em>стати лабораторією, яку лікар обирає першою.</em></h1>
- <p>Ми розібрали рекламу, соцмережі й сайти зуботехнічних лабораторій України та світу — і зібрали з цього рішення саме для Kologrivov Dental Design.</p>
- <a class="go" href="#pakety">Обрати пакет →</a></div>
- <div class="phone"><video src="/reklama/creatives/media/kologrivov_skan_keramika_reels_cta_10s.mp4" poster="/reklama/thumbs/cr_6_reels.jpg" autoplay muted loop playsinline></video></div>
-</div></section>
+ <div class="k">Вступ · листопад 2026</div>
+ <h1>Kologrivov Dental Design: <em>що ми знаємо про лабораторію і її лікарів.</em></h1>
+ <p>Зуботехнічна лабораторія повного циклу в Одесі. Нижче — коротко: хто клієнт лабораторії, чого він хоче, що його зупиняє і де зараз головні зони росту.</p></div>
+ <img class="mark" src="/assets/kolo_mark_dark.png" alt="">
+</div><div class="scrolldown"></div></section>
 
 <section class="sec paper"><div class="w">
  <div class="k rv">Про лабораторію</div>
- <h2 class="rv">Kologrivov Dental Design — <em>лабораторія повного циклу в Одесі.</em></h2>
- <p class="lead rv">Понад 10 років Kologrivov допомагає стоматологам перетворювати складні клінічні задачі на прогнозований, функціональний і естетичний результат. Лабораторія хоче бути не виконавцем замовлень, а партнером лікаря.</p>
+ <h2 class="rv">Понад 10 років — <em>партнер лікаря, а не виконавець замовлень.</em></h2>
+ <p class="lead rv">Kologrivov допомагає стоматологам перетворювати найскладніші клінічні задачі на прогнозований, функціональний і естетичний результат: досвід команди, цифрові технології, власне виробництво й персональний підхід до кожного лікаря.</p>
  <div class="about">
   <div class="rv"><b>Складне протезування</b><span>Імплантати, тотальні реабілітації, беззубі щелепи — перевірені алгоритми.</span></div>
-  <div class="rv"><b>Цифровий дизайн посмішки</b><span>Попередній дизайн, який лікар може показати пацієнту ще до лікування.</span></div>
+  <div class="rv"><b>Цифровий дизайн посмішки</b><span>Попередній дизайн, який лікар може показати пацієнту навіть дистанційно.</span></div>
   <div class="rv"><b>Супровід від планування</b><span>Долучаються ще на етапі ортодонтії чи імплантації — разом з хірургом і ортопедом.</span></div>
   <div class="rv"><b>GC Competence Lab</b><span>Засновник — Opinion Leader GC. Стабільна команда техніків зі своєю спеціалізацією.</span></div>
- </div>
- <div class="quote rv"><div class="num">№1</div><p>Що лікарі назвали найважливішим в опитуванні Kologrivov: <b>персональний технік</b>, який знає їхні вимоги. У рекламі лабораторій України цього не обіцяє ніхто — з цього ми і будуємо пропозицію.</p></div>
-</div></section>
-
-<section class="sec dark"><div class="w">
- <div class="k rv">Що ми вивчили</div>
- <h2 class="rv">Ринок — <em>по одному оголошенню, акаунту й сайту.</em></h2>
- <div class="nums">
-  <div class="rv"><div class="num" data-n="150">0</div><small>оголошень Meta лабораторій з 6 країн</small></div>
-  <div class="rv"><div class="num" data-n="40">0</div><small>лабораторій, що рекламуються саме лікарям</small></div>
-  <div class="rv"><div class="num" data-n="53">0</div><small>рекламодавці перевірені в Google</small></div>
-  <div class="rv"><div class="num" data-n="47">0</div><small>конкурентів у розборі</small></div>
-  <div class="rv"><div class="num" data-n="60">0</div><small>Instagram-акаунтів лабораторій України</small></div>
-  <div class="rv"><div class="num" data-n="507">0</div><small>Reels конкурентів</small></div>
-  <div class="rv"><div class="num" data-n="67">0</div><small>сайтів лабораторій — 33 Україна, 34 світ</small></div>
-  <div class="rv"><div class="num" data-n="73">0</div><small>пошукові запити по містах України</small></div>
  </div>
 </div></section>
 
 <section class="sec"><div class="w">
- <div class="k rv">Як це може виглядати</div>
- <h2 class="rv">Серія креативів для Kologrivov — <em>лікар впізнає своє ще до тексту.</em></h2>
- <div class="strip rv">
-  <img src="/reklama/thumbs/cr_1_skan.jpg" alt="Від вашого скану — до кераміки" loading="lazy"><img src="/reklama/thumbs/cr_2_total.jpg" alt="Тотал на імплантах" loading="lazy">
-  <img src="/reklama/thumbs/cr_3_keis.jpg" alt="Ваш кейс. Ваш технік." loading="lazy"><img src="/reklama/thumbs/cr_4_kontrol.jpg" alt="Кожна робота — під збільшенням" loading="lazy">
-  <img src="/reklama/thumbs/cr_5_viniry.jpg" alt="Вініри на рефракторі" loading="lazy"></div>
-</div></section>
-
-<section class="sec paper" id="pakety"><div class="w">
- <div class="k rv">Три пакети</div>
- <h2 class="rv">Оберіть глибину — <em>кожен наступний включає попередній.</em></h2>
- <div class="pk">
-  <a class="p main rv" href="/reklama/"><span class="badge">Готово</span><div class="lv">Пакет 1</div><h3>Реклама</h3>
-   <ul><li>Meta і Google: хто з конкурентів на що тисне</li><li>Хуки, пропозиції на вході, ціни, шлях лікаря</li><li>Каталог 114 оголошень Meta і 21 Google з відео й оцінкою</li><li>5 концепцій і 6 креативів для Kologrivov</li></ul>
-   <div class="st">Відкрити →</div></a>
-  <a class="p soon rv" href="/reklama-smm/"><div class="lv">Пакет 2</div><h3>Реклама + SMM</h3>
-   <ul><li class="inh">Усе з пакета «Реклама»</li><li>Соцмережі лабораторій: що працює, як говорять з лікарем</li><li>Каталог найкращих постів і Reels</li><li>Контент-план на 1–2 місяці</li></ul>
-   <div class="st">Готується</div></a>
-  <a class="p soon rv" href="/kompleks/"><div class="lv">Пакет 3</div><h3>Комплекс</h3>
-   <ul><li class="inh">Усе з пакетів «Реклама» і «SMM»</li><li>Сайти лабораторій зі скриншотами: що взяти</li><li>Макет сторінки «Для лікарів»</li></ul>
-   <div class="st">Готується</div></a>
+ <div class="k rv">Хто клієнт</div>
+ <h2 class="rv">Лікар-стоматолог, <em>який веде складні випадки.</em></h2>
+ <div class="cl">
+  <div class="rv"><i>Хоче</i><p>Красиві, естетичні роботи зі стабільною якістю — без корекцій і переробок, точно і вчасно, з першого разу. І спиратися на досвід техніка під час планування складних випадків.</p></div>
+  <div class="rv"><i>Мріє</i><p>Щоб один і той самий технік постійно вів його роботи, знав його вимоги й щоразу давав однаково високий результат. Щоб процес був чітким, контрольованим і спокійним.</p></div>
+  <div class="rv o"><i>Що зупиняє</i><p>Невідомість і страх не отримати очікуваний результат — особливо коли красиві роботи в соцмережах не відповідають реальності. Боїться нестабільної якості, зірваних термінів, слабкої естетики.</p></div>
  </div>
 </div></section>
 
-<footer class="foot"><div class="w"><span>Kologrivov Dental Design · Дослідження ринку · дані знято 2026-11-15</span><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a></div></footer>
+<section class="sec paper"><div class="w">
+ <div class="k rv">Опитування лікарів Kologrivov</div>
+ <h2 class="rv">Що лікарі <em>цінують найбільше.</em></h2>
+ <div class="lst">
+  <div class="rv"><i>01</i><b>Зв’язок із техніком</b><span>Можна напряму говорити з тим, хто робить роботу, і впливати на проєкт.</span></div>
+  <div class="rv"><i>02</i><b>Терміни й відповідальність</b><span>Роботи приходять вчасно, часто швидше; лабораторія йде назустріч, коли треба прискорити.</span></div>
+  <div class="rv"><i>03</i><b>Посадка й функція</b><span>Точна посадка, прикус, функція — для кількох лікарів головна причина довіри.</span></div>
+  <div class="rv"><i>04</i><b>Естетика й тотали</b><span>Красиві вініри, природний вигляд, великі тотальні проєкти на імплантатах.</span></div>
+  <div class="rv"><i>05</i><b>Індивідуальний підхід</b><span>Чують лікаря, враховують його корекції, дозволяють приїхати й працювати разом із техніком.</span></div>
+ </div>
+</div></section>
+
+<section class="sec dark"><div class="w">
+ <div class="k rv">Там само, в опитуванні</div>
+ <h2 class="rv">Де болить — <em>п’ять зон росту.</em></h2>
+ <div class="lst dk">
+  <div class="rv"><i>01</i><b>Персональний технік</b><span>Лікарі хочуть одного відповідального техніка, який знає їхні вимоги й історію випадків — від початку до кінця.</span></div>
+  <div class="rv"><i>02</i><b>Контроль якості</b><span>Прикус, посадка на імплантатах, каркаси, межі, колір. Потрібен обов’язковий фінальний контроль кожної роботи перед відправкою.</span></div>
+  <div class="rv"><i>03</i><b>Естетика великих робіт</b><span>У тоталах і повноанатомічних роботах — більше індивідуальності, гармонії, роботи з кольором.</span></div>
+  <div class="rv"><i>04</i><b>Система комунікації</b><span>Зв’язок є, але лікар має завжди розуміти, з ким працює, кому дзвонити й хто відповідає за його випадок.</span></div>
+  <div class="rv"><i>05</i><b>Ціна й розрахунки</b><span>Частина лікарів вважає прайс високим; навіть дрібні неточності в розрахунках б’ють по довірі.</span></div>
+ </div>
+</div></section>
+
+<section class="sec concl"><div class="w">
+ <div class="k rv">Головний висновок</div>
+ <p class="big rv">Лікар має розуміти: <em>хто відповідає</em> за його роботу, що проєкт <em>погоджений</em>, робота пройшла <em>фінальний контроль</em>, прийшла <em>вчасно</em> і відповідає тому, що погодили.</p>
+ <p class="lead rv">Звідси все дослідження: як конкуренти говорять про ці речі в рекламі, соцмережах і на сайтах — і як Kologrivov сказати про це сильніше.</p>
+</div></section>
+
+<footer class="foot"><div class="w"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a></div></footer>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

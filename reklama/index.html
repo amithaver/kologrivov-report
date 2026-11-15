@@ -1,457 +1,279 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
-<title>Kologrivov — реклама лабораторій</title><link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>:root{ --white:#FFFFFF; --ink:#231F1E; --orange:#F5622F; --paper:#F6F3F0; --line:#E6E0DB; --grey:#857C77; --ink2:#4A4442; --tint:#FDEEE8 }
-@page{ size:297mm 210mm; margin:0 }
-*{ box-sizing:border-box; margin:0; padding:0 }
-html,body{ background:#d9d4cf }
-body{ font-family:Manrope,Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact }
-.page{ width:297mm; height:210mm; position:relative; overflow:hidden; background:var(--white); margin:0 auto 8mm; break-after:page; padding:14mm 16mm 0 }
-@media print{ html,body{ background:none } .page{ margin:0 } }
-h1,h2,h3,.num,.kicker,.big{ font-family:"Exo 2",Arial,sans-serif }
-.kicker{ font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); font-weight:600 }
-h2{ font-size:22pt; line-height:1.12; font-weight:700; letter-spacing:-.01em; margin-top:2.5mm; max-width:250mm }
-h2 em{ font-style:normal; color:var(--orange) }
-.lead{ font-size:11pt; line-height:1.5; color:var(--ink2); margin-top:3mm; max-width:210mm }
-.foot{ position:absolute; left:16mm; right:16mm; bottom:0; height:11mm; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; font-size:7.5pt; color:var(--grey) }
-.foot .r{ display:flex; align-items:center; gap:4mm }
-.hex{ width:7.4mm; height:8.4mm; display:inline-grid; place-items:center; font:700 7.5pt "Exo 2"; color:var(--ink); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); background:var(--line) }
-.src{ position:absolute; left:16mm; right:16mm; bottom:12.5mm; font-size:6.8pt; color:var(--grey); line-height:1.4 }
-.take b{ color:var(--orange) } .skip b{ color:var(--ink) }
-
-/* cover */
-.cover{ padding:0; display:grid; grid-template-columns:182mm 115mm }
-.cover .l{ padding:16mm 14mm 13mm 16mm; display:flex; flex-direction:column; justify-content:space-between }
-.cover .wm{ width:98mm }
-.cover h1{ font-size:31pt; line-height:1.08; font-weight:800; letter-spacing:-.015em; margin-top:4mm }
-.cover h1 span{ color:var(--orange) }
-.cover .sub{ font-size:11.5pt; color:var(--ink2); margin-top:5mm; line-height:1.55; max-width:150mm }
-.cover .stats{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1.4px solid var(--ink); padding-top:5mm }
-.cover .stats .num{ font-size:24pt; font-weight:800; line-height:1 }
-.cover .stats div:first-child .num{ color:var(--orange) }
-.cover .stats p{ font-size:8pt; color:var(--grey); margin-top:1.6mm; line-height:1.35 }
-.cover .r{ background:var(--ink); position:relative; color:var(--white); padding:16mm 13mm 13mm; display:flex; flex-direction:column }
-.cover .r svg.iso{ position:absolute; inset:0; width:100%; height:100% }
-.cover .r .mark{ position:relative; width:34mm; display:block }
-.cover .toc{ position:relative; margin-top:auto; margin-bottom:14mm }
-.cover .toc .kicker{ color:#857c77; margin-bottom:3mm }
-.cover .toc .it{ display:grid; grid-template-columns:11mm 1fr; padding:3.6mm 0; border-top:1px solid #3d3735; font:600 10.5pt/1.3 "Exo 2" }
-.cover .toc .it b{ color:var(--orange); font-weight:800 }
-.cover .toc .it span{ display:block; font:400 8pt/1.45 Manrope; color:#a49c97; margin-top:1mm }
-.cover .by{ position:absolute; left:13mm; bottom:11mm; display:flex; align-items:center; gap:3mm; font-size:7.5pt; color:#a49c97 }
-.cover .by img{ height:5mm }
-
-/* divider */
-.div{ background:var(--ink); color:var(--white); display:grid; grid-template-columns:100mm 1fr; align-items:center; padding:0 16mm 11mm }
-.div .bighex{ width:72mm; height:81mm; position:relative }
-.div .bighex svg{ width:100%; height:100% }
-.div .bighex span{ position:absolute; inset:0; display:grid; place-items:center; font:800 50pt "Exo 2" }
-.div h2{ font-size:30pt; max-width:none }
-.div .lead{ color:#cfc8c3; font-size:11.5pt }
-.div .kpis{ display:grid; grid-template-columns:repeat(3,1fr); gap:6mm; margin-top:9mm; border-top:1px solid #3d3735; padding-top:6mm }
-.div .kpis .num{ font-size:26pt; font-weight:800 } .div .kpis .num.o{ color:var(--orange) }
-.div .kpis p{ font-size:8.5pt; color:#a49c97; margin-top:1mm; line-height:1.4 }
-.div .dtoc{ display:grid; grid-template-columns:1fr 1fr; gap:0 8mm; margin-top:8mm }
-.div .dtoc div{ font-size:9.5pt; color:#e9e4e0; padding:2.4mm 0; border-top:1px solid #3d3735; display:flex; gap:4mm }
-.div .dtoc b{ font-family:"Exo 2"; color:var(--orange); width:6mm }
-.div .foot{ border-color:#3d3735; color:#857c77 } .div .foot .hex{ background:#3d3735; color:#cfc8c3 }
-
-/* channels */
-.cp{ display:grid; grid-template-columns:116mm 1fr; gap:12mm; margin-top:8mm }
-.big{ font-weight:800; font-size:60pt; line-height:.95; color:var(--orange) }
-.big small{ font-size:15pt; color:var(--ink); font-weight:700; margin-left:2mm }
-.claim p{ font-size:10.3pt; line-height:1.55; color:var(--ink2); margin-top:3mm } .claim p b{ color:var(--ink) }
-.decide{ margin-top:6mm; background:var(--paper); border-left:2.2mm solid var(--orange); padding:4.5mm 6mm }
-.decide .kicker{ color:var(--orange) } .decide p{ font-size:9.8pt; line-height:1.5; margin-top:1.5mm }
-.grp{ font:700 8pt "Exo 2"; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-top:3mm }
-.bar{ display:grid; grid-template-columns:50mm 1fr 12mm; align-items:center; gap:4mm; padding:2.6mm 0; border-bottom:1px solid var(--line); font-size:9.5pt }
-.bar .track{ height:5.5mm; background:var(--paper); position:relative } .bar .fill{ position:absolute; left:0; top:0; bottom:0; background:var(--ink) } .bar .fill.o{ background:var(--orange) }
-.bar .v{ font:700 12pt "Exo 2"; text-align:right } .bar small{ display:block; color:var(--grey); font-size:7.3pt }
-.note{ font-size:8.6pt; line-height:1.5; color:var(--ink2); margin-top:4mm }
-
-/* levers */
-.lvs{ margin-top:5mm }
-.lv{ display:grid; grid-template-columns:50mm 78mm 1fr; gap:6mm; align-items:center; padding:2.1mm 0; border-bottom:1px solid var(--line) }
-.lv .ln{ font:700 10pt "Exo 2" }
-.lv .lt{ position:relative; height:6mm; background:var(--paper) }
-.lv .lf{ position:absolute; left:0; top:0; bottom:0; background:var(--ink) }
-.lv .lnum{ position:absolute; right:2mm; top:50%; transform:translateY(-50%); font:700 8pt "Exo 2"; color:var(--grey) }
-.lv .lw b{ display:block; font-size:8.3pt; font-weight:600 } .lv .lw span{ display:block; font-size:7.8pt; color:var(--grey); margin-top:.6mm }
-.lv.free{ background:var(--tint); border:1.4px solid var(--orange); padding:2.6mm 3mm; margin-top:2mm }
-.lv.free .ln,.lv.free .lnum{ color:var(--orange) } .lv.free .lw b{ color:var(--orange) }
-
-/* gallery 2x2 */
-.gal{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:6mm 9mm; margin-top:6mm; height:140mm }
-.card{ display:grid; grid-template-columns:52mm 1fr; gap:6mm; min-height:0; border-top:1.4px solid var(--ink); padding-top:3mm }
-.card .ph{ position:relative; background:var(--paper); overflow:hidden; height:100% }
-.card .ph img.contain{ object-fit:contain; object-position:center }
-.card .ph img{ width:100%; height:100%; object-fit:cover; object-position:center 25% }
-.card .tag{ position:absolute; left:0; top:0; background:var(--ink); color:var(--white); font:600 6.8pt "Exo 2"; padding:1mm 2mm; letter-spacing:.06em }
-.card .tx{ display:flex; flex-direction:column; min-width:0 }
-.card .dur{ align-self:flex-start; background:var(--orange); color:var(--white); font:700 7.5pt "Exo 2"; padding:.8mm 2mm }
-.card h3{ font-size:12pt; font-weight:700; margin-top:2mm; line-height:1.2 } .card h3 span{ font:500 8pt Manrope; color:var(--grey) }
-.card .say{ font-size:8.8pt; line-height:1.45; color:var(--ink2); margin-top:1.8mm }
-.card .take,.card .skip{ font-size:8.8pt; line-height:1.45; margin-top:1.8mm; padding-top:1.8mm; border-top:1px solid var(--line) }
-.card a{ font-size:7.2pt; color:var(--grey); margin-top:auto; text-decoration:none; border-bottom:1px solid var(--line); align-self:flex-start }
-.card.sum{ grid-template-columns:1fr; background:var(--ink); color:var(--white); border-top:none; padding:6mm 7mm }
-.card.sum .kicker{ color:var(--orange); margin-bottom:2mm } .card.sum p{ font-size:9.5pt; line-height:1.5; color:#e9e4e0; margin-top:2mm } .card.sum b{ color:var(--white) }
-
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Kologrivov — Пакет 1 «Реклама»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#231F1E;--ink2:#4A4442;--o:#F5622F;--paper:#F6F3F0;--line:#E6E0DB;--grey:#857C77;--dark:#1A1615}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:Manrope,Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.k,.no,.big,.grp,.pv,b{font-family:"Exo 2",Arial,sans-serif}
+a{color:inherit} img{max-width:100%} .w{max-width:1180px;margin:0 auto;padding:0 16px}
+/* шапка */
+.top{position:fixed;inset:0 0 auto;z-index:20;transition:background .35s,box-shadow .35s} .top.s{background:rgba(26,22,21,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.top .w{display:flex;align-items:center;gap:24px;height:64px} .top img{height:30px;flex:0 0 auto}
+.top nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;flex:1;mask-image:linear-gradient(90deg,#000 90%,transparent)} .top nav::-webkit-scrollbar{display:none}
+.top nav a{color:#cfc8c3;text-decoration:none;font:600 13px Manrope;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent;transition:.2s} .top nav a.on,.top nav a:hover{color:#fff;border-color:var(--o)}
+.top .pdf{flex:0 0 auto;background:var(--o);color:#fff;text-decoration:none;font:700 13px "Exo 2";padding:9px 16px;border-radius:40px}
+.prog{position:fixed;top:0;left:0;height:3px;background:var(--o);z-index:21;width:0}
+/* герой */
+.hero{position:relative;min-height:100svh;background:var(--dark);color:#fff;display:flex;align-items:center;overflow:hidden;padding:110px 0 70px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero .w{position:relative;width:100%} .hero .k{color:var(--o);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.hero h1{font-weight:800;font-size:clamp(38px,7vw,92px);line-height:.98;letter-spacing:-.02em;margin-top:18px;max-width:980px}
+.hero h1 em{font-style:normal;color:var(--o)} .hero p{font-size:clamp(16px,1.6vw,20px);line-height:1.55;color:#cfc8c3;max-width:640px;margin-top:22px}
+.kp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:56px;border-top:1px solid rgba(255,255,255,.14);padding-top:26px}
+.kp div{font:800 clamp(34px,5vw,60px)/1 "Exo 2"} .kp div:first-child{color:var(--o)} .kp small{display:block;font:500 14px/1.4 Manrope;color:#a9a09b;margin-top:8px}
+.scrolldown{position:absolute;left:50%;bottom:22px;width:26px;height:42px;border:2px solid rgba(255,255,255,.35);border-radius:14px;transform:translateX(-50%)}
+.scrolldown:after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--o);animation:sd 1.6s infinite}
+@keyframes sd{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+/* секции */
+.sec{padding:110px 0;position:relative} .sec.dark{background:var(--dark);color:#fff}
+.sh{display:flex;align-items:center;gap:14px} .no{font:800 15px "Exo 2";color:#fff;background:var(--o);width:44px;height:50px;display:grid;place-items:center;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);font-weight:700} .dark .k{color:#a9a09b}
+.sec h2{font-weight:800;font-size:clamp(28px,4.2vw,52px);line-height:1.06;letter-spacing:-.015em;margin-top:18px;max-width:1000px} .sec h2 em{font-style:normal;color:var(--o)}
+.lead{font-size:18px;line-height:1.6;color:var(--ink2);max-width:760px;margin-top:20px} .dark .lead,.dark .p{color:#cfc8c3}
+.p{font-size:17px;line-height:1.65;color:var(--ink2);margin-top:16px} .p.small{font-size:15px} .src{margin-top:44px;font-size:12px;color:var(--grey);line-height:1.5;max-width:900px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:44px;align-items:start}
+.big span{font:800 clamp(70px,10vw,130px)/.9 "Exo 2";color:var(--o)} .big small{display:block;font:700 16px "Exo 2";margin-top:8px}
+.note{background:var(--paper);border-left:5px solid var(--o);padding:20px 24px;font-size:16px;line-height:1.6;margin-top:24px;color:var(--ink2)} .note b{color:var(--ink)}
+.dark .note{background:#2A2523;color:#cfc8c3} .dark .note b{color:#fff} .note.o{background:var(--ink);color:#e6dfda} .note.o b{color:var(--o)}
+.grp{font:700 13px "Exo 2";letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin:26px 0 10px}
+.bar{display:grid;grid-template-columns:200px 1fr 46px;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)} .dark .bar{border-color:#3a3432}
+.bl b{display:block;font-size:15px} .bl small{display:block;font-size:12.5px;color:var(--grey);margin-top:2px}
+.bt{height:12px;background:var(--paper);position:relative;overflow:hidden} .dark .bt{background:#2f2a28}
+.bt i{position:absolute;inset:0 auto 0 0;width:0;background:var(--ink);transition:width 1.4s cubic-bezier(.2,.8,.2,1)} .dark .bt i{background:#cfc8c3} .bt i.o{background:var(--o)!important}
+.in .bt i,.bt.in i{width:var(--w)} .bv{font:800 22px "Exo 2";text-align:right}
+/* рычаги */
+.lvs{margin-top:36px;display:grid;gap:4px} .lv{display:grid;grid-template-columns:260px 1fr 70px;gap:6px 18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.ln{font:700 17px "Exo 2"} .lc{font:800 16px "Exo 2";text-align:right} .lw{grid-column:2/4;font-size:13px;color:var(--grey)} .lx{grid-column:2/4;font-size:14.5px;color:var(--ink2);font-style:italic}
+.lv.free{background:#FDEEE8;padding:16px;border:0;margin-top:6px} .lv.free .ln,.lv.free .lc{color:var(--o)}
+/* хуки */
+.hooks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px} .hk{background:#2A2523;padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:190px;transition:transform .3s,background .3s}
+.hk:hover{transform:translateY(-4px);background:#332c2a} .hk q{font:700 19px/1.35 "Exo 2";quotes:"«" "»"} .hm{margin-top:18px;font-size:13px;color:#a9a09b} .hm span{display:inline-block;color:var(--o);font-weight:700;margin-right:8px}
+.formula{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px} .formula div{border-top:3px solid #4a4442;padding-top:12px} .formula b{display:block;font-size:17px}
+.formula span{display:block;font-size:14px;color:#cfc8c3;margin-top:6px;line-height:1.45} .formula .o{border-color:var(--o)} .formula .o b{color:var(--o)}
+/* пропозиции */
+.offs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px} .of{border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .3s,transform .3s;background:#fff}
+.of:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(35,31,30,.1)} .ot b{display:block;font-size:17px;line-height:1.25} .ot span{display:block;font-size:13px;color:var(--grey);margin-top:4px}
+.of q{font-size:14.5px;line-height:1.5;background:var(--paper);padding:10px 12px;quotes:none} .of p{font-size:13.5px;line-height:1.5;color:var(--ink2)} .of small{display:block;color:var(--grey);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.ov{margin-top:auto;font-size:13.5px;line-height:1.45;font-weight:600;display:flex;gap:8px} .ov i{flex:0 0 10px;height:10px;margin-top:4px;transform:rotate(45deg)}
+.of.vy .ov i{background:#2E9E5B} .of.vp .ov i{background:#E9A23B} .of.vn .ov i{background:#C9C1BC} .of.vy{border-top:4px solid #2E9E5B} .of.vp{border-top:4px solid #E9A23B} .of.vn{border-top:4px solid #C9C1BC}
+/* цены */
+.prs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px} .pr{background:var(--paper);padding:24px} .pv{font-weight:800;font-size:36px;color:var(--o)} .pr b{display:block;font-size:17px;margin-top:8px} .pr span{display:block;font-size:14px;color:var(--grey);margin-top:6px;line-height:1.45}
+/* путь */
+.flow{display:grid;gap:10px} .st{display:grid;grid-template-columns:44px 1fr;gap:2px 14px;background:#2A2523;padding:14px 18px;align-items:center}
+.st i{grid-row:1/3;font:800 22px "Exo 2";font-style:normal;color:var(--o)} .st b{font-size:16px} .st span{font-size:13.5px;color:#a9a09b} .st.o{background:var(--o)} .st.o i,.st.o span{color:#fff}
+/* подборка */
+.tabs{display:flex;gap:8px;margin-top:36px} .tabs button{font:700 15px "Exo 2";border:1.5px solid var(--ink);background:#fff;color:var(--ink);padding:10px 20px;border-radius:40px;cursor:pointer;transition:.2s} .tabs button.on{background:var(--ink);color:#fff}
+.ads[hidden]{display:none!important} .ads{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+.ad{display:flex;flex-direction:column;border:1px solid var(--line);background:#fff;transition:transform .3s,box-shadow .3s} .ad:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(35,31,30,.12)}
+.ad .ph{position:relative;display:block;aspect-ratio:4/5;background:var(--paper);overflow:hidden} .ad .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s} .ad:hover .ph img{transform:scale(1.05)} .ad .ph img.contain{object-fit:contain}
+.tag{position:absolute;left:10px;top:10px;background:var(--ink);color:#fff;font:700 11px "Exo 2";padding:5px 9px;letter-spacing:.06em}
+.at{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1} .dur{font:700 12px "Exo 2";color:var(--o);letter-spacing:.06em;text-transform:uppercase} .at h3{font-size:18px} .at h3 span{font:500 13px Manrope;color:var(--grey)}
+.say{font-size:13.5px;line-height:1.5;color:var(--ink2)} .take,.skip{font-size:13.5px;line-height:1.5} .take b{color:#2E9E5B} .skip b{color:#C0392B} .more{margin-top:auto;font:700 13px "Exo 2";color:var(--o);text-decoration:none}
+.cta{display:inline-block;margin-top:36px;background:var(--o);color:#fff;text-decoration:none;font:800 17px "Exo 2";padding:16px 28px;border-radius:50px;transition:transform .25s,box-shadow .25s} .cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(245,98,47,.35)}
 /* google */
-.gg{ display:grid; grid-template-columns:repeat(3,1fr); gap:7mm; margin-top:6mm }
-.gb{ border-top:1.4px solid var(--ink); padding-top:3mm }
-.gb h3{ font-size:12pt; font-weight:700 } .gb .gm{ font-size:7.6pt; color:var(--grey); margin-top:1mm; line-height:1.4 }
-.gb .gi{ margin-top:3mm; display:flex; gap:2mm; align-items:flex-start; height:78mm; overflow:hidden; background:var(--paper); padding:2mm }
-.gb .gi img{ border:1px solid var(--line); max-height:74mm; max-width:100%; object-fit:contain; object-position:top left; min-width:0; flex:1 1 0 }
-.gb ul{ list-style:none; margin-top:3mm } .gb li{ font-size:8.6pt; line-height:1.42; padding:1.2mm 0 1.2mm 4mm; position:relative; color:var(--ink2) }
-.gb li:before{ content:""; position:absolute; left:0; top:2.6mm; width:1.8mm; height:2mm; background:var(--orange); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%) }
-.gb .take,.gb .skip{ font-size:8.6pt; line-height:1.45; margin-top:2mm; padding-top:2mm; border-top:1px solid var(--line) }
+.gbs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px} .gb{border-top:3px solid var(--ink);padding-top:16px} .gb h3{font-size:22px} .gm{font-size:13px;color:var(--grey);margin-top:4px}
+.gi{display:grid;gap:8px;margin-top:14px} .gi img{width:100%;border:1px solid var(--line);display:block} .gb ul{margin:14px 0 0 18px;font-size:14px;line-height:1.55;color:var(--ink2)} .gb .take{margin-top:12px}
+.gf{border-bottom:1px solid var(--line)} .gf summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:240px 1fr 30px;gap:20px;padding:20px 0;align-items:center}
+.gf summary::-webkit-details-marker{display:none} .gf summary:after{content:"+";font:800 26px "Exo 2";color:var(--o);text-align:right;transition:transform .3s} .gf[open] summary:after{transform:rotate(45deg)}
+.gf summary b{font-size:19px} .gf summary span{font-size:15px;color:var(--ink2)} .gfb{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 0 24px;font-size:14.5px;line-height:1.55;color:var(--ink2)}
+.gfb small{display:block;font:700 11px "Exo 2";letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:6px}
+/* выводы */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px} .ch{font:800 22px "Exo 2";padding-bottom:12px;border-bottom:3px solid #2E9E5B} .dont .ch{border-color:#C0392B}
+.dd ul{list-style:none} .dd li{padding:16px 0;border-bottom:1px solid var(--line)} .dd li b{display:block;font-size:17px} .dd li span{display:block;font-size:14.5px;line-height:1.55;color:var(--ink2);margin-top:6px}
+.useful{background:var(--paper);padding:20px 24px;margin-top:26px} .useful ul li{border:0;padding:6px 0 6px 18px;position:relative;font-size:14.5px;line-height:1.55;color:var(--ink2)} .useful li:before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;background:var(--o);transform:rotate(45deg)}
+/* концепции */
+.ccs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px} .cc{background:#2A2523;padding:22px;display:flex;flex-direction:column;gap:12px}
+.cc i{font:800 30px "Exo 2";font-style:normal;color:var(--o)} .cc h3{font-size:18px;line-height:1.25} .cc q{font-size:14px;line-height:1.5;color:#e6dfda;quotes:none;border-left:3px solid var(--o);padding-left:10px}
+.cc p{font-size:13.5px;line-height:1.5;color:#cfc8c3} .cc small{display:block;font:700 10.5px "Exo 2";letter-spacing:.14em;text-transform:uppercase;color:#857C77;margin-bottom:3px} .cc .cond small{color:var(--o)}
+/* креативы */
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px} .rules div{background:var(--ink);color:#fff;padding:20px} .rules b{display:block;color:var(--o);font-size:16px} .rules span{display:block;font-size:14px;line-height:1.5;color:#d9d2cd;margin-top:6px}
+.rules.light div{background:var(--paper);color:var(--ink)} .rules.light span{color:var(--ink2)}
+.crs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 22px;margin-top:40px} .cr{display:flex;flex-direction:column;gap:14px}
+.cm{background:var(--dark);overflow:hidden;aspect-ratio:4/5} .cm img,.cm video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s} .cr:hover .cm img{transform:scale(1.04)}
+.cr.v .cm{aspect-ratio:4/5} .n{font:700 12px "Exo 2";letter-spacing:.16em;text-transform:uppercase;color:var(--o)} .ct h3{font-size:21px;line-height:1.2;margin-top:6px}
+.ct p{font-size:14.5px;line-height:1.55;color:var(--ink2);margin-top:8px} .ct ul{list-style:none;margin-top:10px;background:var(--paper);padding:12px 14px} .ct li{font:700 15px/1.6 "Exo 2"} .ct li:before{content:"— ";color:var(--o)}
+.ct .cond{font-size:13px} .ct .cond small{color:var(--o);font:700 11px "Exo 2";letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+/* схема */
+.scs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px} .sc{border-top:3px solid var(--ink);padding-top:14px} .sct{font:800 18px "Exo 2";display:flex;gap:10px;align-items:center} .sct i{font-style:normal;color:var(--o);font-size:26px}
+.sc ul{list-style:none;margin-top:10px} .sc li{font-size:14px;line-height:1.5;color:var(--ink2);padding:6px 0;border-bottom:1px solid var(--line)}
+/* финал */
+.fin{background:var(--o);color:#fff;padding:90px 0;text-align:center} .fin h2{font:800 clamp(30px,4.6vw,56px)/1.05 "Exo 2"} .fin p{font-size:18px;margin-top:14px;opacity:.9}
+.fin .bt2{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px} .fin a{background:#fff;color:var(--ink);text-decoration:none;font:800 17px "Exo 2";padding:16px 28px;border-radius:50px} .fin a.d{background:var(--ink);color:#fff}
+.foot{background:var(--dark);color:#857C77;font-size:13px;padding:26px 0} .foot .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px} .foot a{color:#cfc8c3;text-decoration:none}
+/* появление */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)} .rv.in{opacity:1;transform:none}
+.shot .hero{min-height:900px} .shot .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none} html{scroll-behavior:auto}}
+@media(max-width:1000px){.two,.dd{grid-template-columns:1fr;gap:32px} .hooks,.crs,.gbs{grid-template-columns:1fr 1fr} .offs,.ads{grid-template-columns:1fr 1fr} .ccs,.scs{grid-template-columns:1fr 1fr} .rules,.formula{grid-template-columns:1fr 1fr} .prs{grid-template-columns:1fr 1fr} .gfb{grid-template-columns:1fr} .top nav{display:none}}
+@media(max-width:640px){.sec{padding:72px 0} .hooks,.crs,.gbs,.offs,.ads,.ccs,.scs,.rules,.formula,.prs{grid-template-columns:1fr} .kp{grid-template-columns:1fr 1fr}
+ .bar{grid-template-columns:1fr 40px} .bar .bt{grid-column:1/3;grid-row:2} .lv{grid-template-columns:1fr 60px} .lv .bt{grid-column:1/3} .lw,.lx{grid-column:1/3} .gf summary{grid-template-columns:1fr 24px} .gf summary span{grid-column:1/2}}
+</style></head><body>
+<script>if(/shot/.test(location.search))document.documentElement.className='shot'</script>
+<div class="prog"></div>
+<header class="top"><div class="w"><a href="/"><img src="/assets/kolo_wordmark_dark.png" alt="Kologrivov Dental Design"></a>
+<nav><a href="#kanaly">Канали</a><a href="#argumenty">Аргументи</a><a href="#khuky">Хуки</a><a href="#propozytsii">Пропозиції</a><a href="#tsiny">Ціни</a><a href="#pidbirka">Підбірка</a><a href="#google">Google</a><a href="#vysnovky">Висновки</a><a href="#kontseptsii">Концепції</a><a href="#kreatyvy">Креативи</a></nav><a class="pdf" href="kologrivov_reklama.pdf" download>PDF</a></div></header>
+<section class="hero"><canvas></canvas><div class="w">
+<div class="k">Пакет 1 · Реклама · Meta і Google · листопад 2026</div>
+<h1>Як лабораторії залучають лікарів — <em>і що з цього взяти Kologrivov.</em></h1>
+<p>Реклама зуботехнічних лабораторій України та світу: аргументи, перші рядки, пропозиції, ціни, шлях лікаря. Підбірка найкращих прийомів, 5 концепцій і 6 креативів.</p>
+<div class="kp"><div><span data-n="150">0</span><small>оголошень Meta з 6 країн</small></div><div><span data-n="40">0</span><small>лабораторій, що рекламуються лікарям</small></div>
+<div><span data-n="53">0</span><small>рекламодавці перевірені в Google</small></div><div><span data-n="305">0</span><small>днів — найдовше оголошення в Україні</small></div></div>
+</div><div class="scrolldown"></div></section>
+<section id="kanaly" class="sec"><div class="w">
+<div class="sh rv"><span class="no">01</span><span class="k">Канали</span></div>
+<h2 class="rv">Meta — де зараз усі конкуренти. <em>Google — де лікаря зустрічають лише троє.</em></h2>
+<div class="two"><div class="rv">
+ <div class="big"><span data-n="66">0</span><small>оголошень для лікарів в Україні</small></div>
+ <p class="p">показують <b>15 лабораторій через Facebook та Instagram</b>. Найактивніша — FrankoLab: 23 оголошення, 18 з них активні зараз.</p>
+ <p class="p">У Google лікарям по всій Україні рекламуються <b>3 лабораторії — Contour Lab, FrankoLab і Цифра</b>: пошук, банери, відео, Карти.</p>
+ <div class="note"><b>Що це означає.</b> У Meta треба вирізнятися серед 15 лабораторій — вирішують креатив і пропозиція. У Google лікар, який сам шукає лабораторію, бачить лише трьох рекламодавців — вирішує присутність і точний текст. Канали доповнюють один одного.</div>
+</div><div>
+ <div class="grp rv">Meta</div><div class="bar rv"><div class="bl"><b>Усі лабораторії</b><small>15 рекламодавців</small></div>
+<div class="bt"><i class="o" style="--w:100.0%"></i></div><span class="bv" data-n="66">0</span></div><div class="bar rv"><div class="bl"><b>FrankoLab</b><small>18 активні</small></div>
+<div class="bt"><i class="" style="--w:34.8%"></i></div><span class="bv" data-n="23">0</span></div><div class="bar rv"><div class="bl"><b>IDentity Lab</b><small>курси для лікарів</small></div>
+<div class="bt"><i class="" style="--w:18.2%"></i></div><span class="bv" data-n="12">0</span></div><div class="bar rv"><div class="bl"><b>Zirkondan.lab</b><small>ціна в тексті</small></div>
+<div class="bt"><i class="" style="--w:15.2%"></i></div><span class="bv" data-n="10">0</span></div>
+ <div class="grp rv">Google</div><div class="bar rv"><div class="bl"><b>Contour Lab</b><small>№1 за «зуботехнічна лабораторія»</small></div>
+<div class="bt"><i class="" style="--w:13.6%"></i></div><span class="bv" data-n="9">0</span></div><div class="bar rv"><div class="bl"><b>FrankoLab</b><small>пошук, банери, відео</small></div>
+<div class="bt"><i class="" style="--w:12.1%"></i></div><span class="bv" data-n="8">0</span></div><div class="bar rv"><div class="bl"><b>Цифра (Cifra Style)</b><small>пошук і Карти</small></div>
+<div class="bt"><i class="" style="--w:4.5%"></i></div><span class="bv" data-n="3">0</span></div>
+ <p class="p small rv">Найдовше в Meta крутиться оголошення FrankoLab про All-on-X — <b>305 днів</b>, і воно досі активне. Рік ніхто не тримає рекламу, яка не приносить замовлень.</p>
+</div></div><p class="src">Бібліотека реклами Meta — 150 оголошень; Центр прозорості Google Ads — 53 рекламодавці; знято 2026-11-15.</p></div></section><section id="argumenty" class="sec"><div class="w">
+<div class="sh rv"><span class="no">02</span><span class="k">На що тиснуть конкуренти</span></div>
+<h2 class="rv">12 лабораторій України в Meta: що обіцяють — <em>і чого не обіцяє ніхто.</em></h2><p class="lead rv">Ми прочитали кожне оголошення й відмітили, на що воно тисне. Довжина смуги — скільки лабораторій з 12 використовують аргумент.</p><div class="lvs"><div class="lv rv"><div class="ln">Цифра, CAD/CAM</div><div class="bt"><i class="" style="--w:83.3%"></i></div>
+<span class="lc">10 з 12</span><p class="lw">FrankoLab, IDentity, Zirkondan, For Dental, Favorit Dent, Bauer&#x27;s, Aspect-lab, Цифра, DioLab, timofiev</p><p class="lx">Є майже в усіх — вже не відрізняє.</p></div><div class="lv rv"><div class="ln">Терміни, без переробок</div><div class="bt"><i class="" style="--w:41.7%"></i></div>
+<span class="lc">5 з 12</span><p class="lw">FrankoLab, Zirkondan, For Dental, Livsha, DioLab</p><p class="lx">«Втомились від переробок і нагадувань про терміни?»</p></div><div class="lv rv"><div class="ln">Ціна прямо в тексті</div><div class="bt"><i class="" style="--w:33.3%"></i></div>
+<span class="lc">4 з 12</span><p class="lw">Zirkondan, Livsha, Bauer&#x27;s, Aspect-lab</p><p class="lx">«Циркон від 1700 грн/од.», «балка — 150 €»</p></div><div class="lv rv"><div class="ln">Тотал, імпланти, All-on-X</div><div class="bt"><i class="" style="--w:33.3%"></i></div>
+<span class="lc">4 з 12</span><p class="lw">FrankoLab, Zirkondan, Aspect-lab, Цифра</p><p class="lx">«Працюєте в концепціях ALL-ON-X?»</p></div><div class="lv rv"><div class="ln">Цифри-докази</div><div class="bt"><i class="" style="--w:25.0%"></i></div>
+<span class="lc">3 з 12</span><p class="lw">FrankoLab, Livsha, timofiev</p><p class="lx">«35 000 конструкцій для лікарів із 13 країн»</p></div><div class="lv rv"><div class="ln">Прайс за заявку</div><div class="bt"><i class="" style="--w:16.7%"></i></div>
+<span class="lc">2 з 12</span><p class="lw">FrankoLab, Zirkondan</p><p class="lx">«Залишайте заявку та отримайте актуальний прайс»</p></div><div class="lv rv"><div class="ln">Умови для нових</div><div class="bt"><i class="" style="--w:16.7%"></i></div>
+<span class="lc">2 з 12</span><p class="lw">Zirkondan, Favorit Dent</p><p class="lx">«Перші три роботи скажуть більше, ніж реклама»</p></div><div class="lv rv"><div class="ln">Навчання лікарів</div><div class="bt"><i class="" style="--w:8.3%"></i></div>
+<span class="lc">1 з 12</span><p class="lw">IDentity Lab</p><p class="lx">Курси для стоматологів в Одесі</p></div><div class="lv rv free"><div class="ln">Персональний технік</div><div class="bt"><i class="o" style="--w:2.5%"></i></div>
+<span class="lc">0 з 12</span><p class="lw">ніхто</p><p class="lx">Livsha — «персональний менеджер», FrankoLab у Google — «один менеджер», але не технік.</p></div></div><p class="src">Тексти 66 оголошень 12 лабораторій для лікарів, Бібліотека реклами Meta (Україна), 2026-11-15.</p></div></section><section id="khuky" class="sec dark"><div class="w">
+<div class="sh rv"><span class="no">03</span><span class="k">Перший рядок</span></div>
+<h2 class="rv">Перший рядок вирішує: <em>12 хуків, з яких починають конкуренти.</em></h2>
+<div class="hooks"><div class="hk rv"><q>Працюєте в концепціях ALL-ON-X?</q><div class="hm"><span>Звернення до вузького лікаря</span>FrankoLab · UA · 305 днів</div></div><div class="hk rv"><q>Втомились від постійних переробок, корекцій і нагадування лабораторії про терміни?</q><div class="hm"><span>Біль лікаря</span>FrankoLab · UA · 303 дні</div></div><div class="hk rv"><q>Стоматолог або керівник клініки? Залишайте заявку та отримайте актуальний прайс.</q><div class="hm"><span>Кому + вигода</span>FrankoLab · UA · 305 днів</div></div><div class="hk rv"><q>Який інтраоральний сканер підходить вашій практиці?</q><div class="hm"><span>Корисне питання</span>Stroh &amp; Scheuerpflug · DE · 322 дні</div></div><div class="hk rv"><q>Шукаєте лабораторію, яка дотримується термінів, легко на зв&#x27;язку і робить без виправлень?</q><div class="hm"><span>Три болі разом</span>Scanlab · PL · 143 дні</div></div><div class="hk rv"><q>All-on-4 — одна з найскладніших конструкцій в імплантології.</q><div class="hm"><span>Експертність</span>Löger &amp; Grothe · DE · 134 дні</div></div><div class="hk rv"><q>Ваш 100% цифровий партнер для стоматологів!</q><div class="hm"><span>Позиція</span>NP Dental Labor · TR · 213 днів</div></div><div class="hk rv"><q>Один сканер — добре. Два — краще.</q><div class="hm"><span>Несподіванка</span>Dandy · DE · 72 дні</div></div><div class="hk rv"><q>Шукаєте лабораторію, яка розуміє, що ваш час у кріслі безцінний?</q><div class="hm"><span>Цінність часу лікаря</span>CeramShape · PL · 34 дні</div></div><div class="hk rv"><q>Ваша лабораторія зараз у відпустці?</q><div class="hm"><span>Ситуація «тут і зараз»</span>Hexa Ceram · GB · 18 днів</div></div><div class="hk rv"><q>Перші три роботи скажуть більше, ніж будь-яка реклама.</q><div class="hm"><span>Зняття ризику</span>Zirkondan.lab · UA · нове</div></div><div class="hk rv"><q>Переробки коштують вам не лише часу, а й довіри пацієнта.</q><div class="hm"><span>Біль + наслідок</span>Zirkondan.lab · UA · нове</div></div></div>
+<div class="formula rv"><div><b>Кому</b><span>«Працюєте в концепціях ALL-ON-X?»</span></div><div><b>Біль</b><span>переробки, корекції, терміни</span></div>
+<div><b>Наслідок</b><span>«коштує довіри пацієнта»</span></div><div><b>Вихід</b><span>прайс, перша робота, вебінар</span></div>
+<div class="o"><b>Чого немає в жодному</b><span>хто саме робитиме роботу — техніка не називає ніхто</span></div></div><p class="src">Перші рядки 114 оголошень для лікарів, відсортовано за тривалістю показу; іноземні — переклад MESHKOR.</p></div></section><section id="propozytsii" class="sec"><div class="w">
+<div class="sh rv"><span class="no">04</span><span class="k">Пропозиції на вході</span></div>
+<h2 class="rv">Як конкуренти знімають страх першої роботи: <em>8 пропозицій.</em></h2><p class="lead rv">Головне, що зупиняє лікаря (опитування Kologrivov), — невідомість і страх не отримати очікуваний результат. Ось як цей бар’єр знімають інші — і чи підходить це Kologrivov.</p><div class="offs"><div class="of rv vy"><div class="ot"><b>Прайс за заявку</b><span>FrankoLab · UA</span></div><q>«Залишайте заявку та отримайте актуальний прайс»</q>
+<p><small>Що потрібно:</small> Лід-форма і менеджер, який швидко відповідає</p><div class="ov"><i></i>Так — ціна не світиться публічно, контакт лікаря залишається</div></div><div class="of rv vy"><div class="ot"><b>Спецумови на перші роботи</b><span>Zirkondan · UA</span></div><q>«Перші три роботи скажуть більше, ніж будь-яка реклама»</q>
+<p><small>Що потрібно:</small> Зрозумілі умови: що саме отримує новий лікар</p><div class="ov"><i></i>Так — прямо знімає страх «невідомості» з опитування</div></div><div class="of rv vy"><div class="ot"><b>«Почніть з однієї роботи»</b><span>FrankoLab · Google</span></div><q>Швидке посилання в пошуковому оголошенні</q>
+<p><small>Що потрібно:</small> Сторінка «як почати»: скан, доставка, терміни</p><div class="ov"><i></i>Так</div></div><div class="of rv vp"><div class="ot"><b>Знижка на першу роботу</b><span>Löger &amp; Grothe · DE</span></div><q>−10% на першу роботу</q>
+<p><small>Що потрібно:</small> Розрахунок маржі</p><div class="ov"><i></i>Частково — прайс уже вважають високим; краще гарантія, ніж знижка</div></div><div class="of rv vp"><div class="ot"><b>Кредит за реєстрацію</b><span>Smile Dental Lab · US</span></div><q>$100 на перший кейс</q>
+<p><small>Що потрібно:</small> Онлайн-реєстрація лікаря</p><div class="ov"><i></i>Частково — як бонус до першої роботи</div></div><div class="of rv vy"><div class="ot"><b>Вебінар, курс, воркшоп</b><span>Stroh · DE (322 дні), IDentity · UA</span></div><q>«Який сканер обрати» — 30 хв безкоштовно</q>
+<p><small>Що потрібно:</small> Спікер і тема, корисна лікарю</p><div class="ov"><i></i>Так — засновник є Opinion Leader GC</div></div><div class="of rv vn"><div class="ot"><b>Сканер у партнерстві</b><span>Dandy · DE, Scanlab · PL</span></div><q>сканер включено; ваучер 7 000 zł на роботи</q>
+<p><small>Що потрібно:</small> Великі вкладення</p><div class="ov"><i></i>Ні на старті</div></div><div class="of rv vn"><div class="ot"><b>Акційна ціна з дедлайном</b><span>Zirkondan · UA</span></div><q>циркон 1500 грн до кінця листопада</q>
+<p><small>Що потрібно:</small> Готовність конкурувати ціною</p><div class="ov"><i></i>Ні — суперечить преміальній позиції</div></div></div><p class="src">Бібліотека реклами Meta, Центр прозорості Google Ads, 2026-11-15; оцінка «чи підходить» — рекомендація MESHKOR.</p></div></section><section id="tsiny" class="sec"><div class="w">
+<div class="sh rv"><span class="no">05</span><span class="k">Ціни в рекламі</span></div>
+<h2 class="rv">Хто показує ціну в рекламі — <em>і хто свідомо її ховає.</em></h2>
+<div class="prs"><div class="pr rv"><div class="pv">1500 грн</div><b>Циркон, за одиницю</b><span>Zirkondan · UA · для нових партнерів, до кінця листопада</span></div><div class="pr rv"><div class="pv">від 1700 грн</div><b>Циркон преміальний, за одиницю</b><span>Livsha · UA · постійна ціна в оголошенні</span></div><div class="pr rv"><div class="pv">150 €</div><b>Фрезерування титанової балки</b><span>Zirkondan · UA · за STL-файлом, менш ніж за добу</span></div><div class="pr rv"><div class="pv">140 €</div><b>Титанова балка All-in-4</b><span>Aspect-lab · UA · All-in-5 і більше — від 160 €</span></div><div class="pr rv"><div class="pv">від 159 €</div><b>Коронка з цирконію</b><span>Dandy · DE · 6 днів, гарантія 10 років</span></div><div class="pr rv"><div class="pv">20 000 zł</div><b>Інтраоральний сканер</b><span>Scanlab · PL · + ваучер 7 000 zł на роботи лабораторії</span></div></div>
+<div class="two" style="margin-top:28px"><div class="note rv"><b>Що видно.</b> Ціну показують ті, хто конкурує ціною або продає вузьку послугу (фрезерування, балки). Найбільший рекламодавець України — FrankoLab — ціни не показує: прайс за заявку.</div>
+<div class="note o rv"><b>Рекомендація для Kologrivov.</b> Частина лікарів уже вважає прайс високим. Сильніше за ціну в оголошенні — <b>прайс після заявки разом з умовами першої роботи</b> і поясненням, за що лікар платить: технік, дизайн, контроль.</div></div><p class="src">Тексти оголошень, Бібліотека реклами Meta, 2026-11-15; ціни — як в оголошеннях на дату зйомки.</p></div></section><section id="shliakh" class="sec dark"><div class="w">
+<div class="sh rv"><span class="no">06</span><span class="k">Куди веде реклама</span></div>
+<h2 class="rv">Куди веде реклама — <em>і де губиться лікар.</em></h2>
+<div class="two"><div><div class="grp rv">66 оголошень лабораторій України</div>
+<div class="bar rv"><div class="bl"><b>У месенджер або Instagram</b><small>«напишіть у Direct»</small></div>
+<div class="bt"><i class="o" style="--w:45.5%"></i></div><span class="bv" data-n="30">0</span></div><div class="bar rv"><div class="bl"><b>На сайт</b><small>сторінка послуг або прайсу</small></div>
+<div class="bt"><i class="" style="--w:27.3%"></i></div><span class="bv" data-n="18">0</span></div><div class="bar rv"><div class="bl"><b>Не вказано</b><small>без кнопки або посилання</small></div>
+<div class="bt"><i class="" style="--w:27.3%"></i></div><span class="bv" data-n="18">0</span></div>
+<p class="p small rv">Месенджер — найкоротший шлях, але лікар пише «скільки коштує?» і чекає. Хто відповідає повільно або без умов — втрачає.</p></div>
+<div><div class="grp rv">Рекомендований шлях для Kologrivov</div><div class="flow"><div class="st rv"><i>1</i><b>Оголошення</b><span>хук для конкретного лікаря</span></div><div class="st rv"><i>2</i><b>Лід-форма Meta</b><span>ім’я, клініка, телефон, тип робіт; «Ви лікар чи клініка?»</span></div><div class="st rv"><i>3</i><b>Дзвінок техніка</b><span>протягом години, не менеджера</span></div><div class="st rv"><i>4</i><b>Прайс + умови першої роботи</b><span>письмово, з термінами</span></div><div class="st rv o"><i>5</i><b>Перша робота → закріплений технік</b><span>лікар знає, хто веде його роботи</span></div></div></div></div><p class="src">Колонка «посадочна» 66 оголошень лабораторій України, 2026-11-15. Шлях 1–5 — рекомендація MESHKOR.</p></div></section><section id="pidbirka" class="sec"><div class="w">
+<div class="sh rv"><span class="no">07</span><span class="k">Підбірка: Meta</span></div>
+<h2 class="rv">Що показують лабораторії — <em>і що з цього взяти.</em></h2>
+<div class="tabs rv"><button class="on" data-t="ua">Україна · 7</button><button data-t="world">Світ · 8</button></div>
+<div class="ads" data-p="ua"><article class="ad rv"><a class="ph" href="catalog/#ad-1179415320929344"><img src="thumbs/ua_frankolab_1179415320929344.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ФОТО</span></a>
+<div class="at"><div class="dur">305 днів · активне</div><h3>FrankoLab<span> · Івано-Франківськ</span></h3><p class="say">«Працюєте в концепціях ALL-ON-X? Ми готові довершити Вашу роботу надійною конструкцією.» Далі — точність, терміни, логістика.</p>
+<p class="take"><b>Взяти:</b> Звертатися до лікаря за типом роботи (хірург, All-on-X), а не «до всіх стоматологів».</p><a class="more" href="catalog/#ad-1179415320929344">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-838149315880686"><img src="thumbs/ua_frankolab_838149315880686.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ФОТО</span></a>
+<div class="at"><div class="dur">303 дні</div><h3>FrankoLab<span> · Івано-Франківськ</span></h3><p class="say">«Втомились від постійних переробок, корекцій і нагадування лабораторії про терміни?» — біль лікаря першим рядком, далі «актуальний прайс» за заявку.</p>
+<p class="take"><b>Взяти:</b> Починати з болю лікаря його словами: переробки, корекції, терміни.</p><a class="more" href="catalog/#ad-838149315880686">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1288576183114338"><img src="thumbs/ua_zirkondan_1288576183114338.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ВІДЕО</span></a>
+<div class="at"><div class="dur">7 днів</div><h3>Zirkondan.lab<span></span></h3><p class="say">«Перші три роботи скажуть більше, ніж будь-яка реклама.» Спецумови на перші роботи для нових партнерів.</p>
+<p class="take"><b>Взяти:</b> Знижувати ризик першої роботи — саме його лікарі в опитуванні Kologrivov називають головним страхом.</p><a class="more" href="catalog/#ad-1288576183114338">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1456271224236469"><img src="thumbs/ua_zirkondan_1456271224236469.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ВІДЕО</span></a>
+<div class="at"><div class="dur">нове, 1 день</div><h3>Zirkondan.lab<span></span></h3><p class="say">«Переробки коштують вам не лише часу, а й довіри пацієнта.» Контроль кожного етапу, гарантія, циркон для нових партнерів 1500 грн/од.</p>
+<p class="take"><b>Взяти:</b> Біль + гарантія + ціна для нових в одному оголошенні.</p><a class="more" href="catalog/#ad-1456271224236469">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-2045329306167591"><img src="thumbs/ua_livsha_2045329306167591.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ВІДЕО</span></a>
+<div class="at"><div class="dur">23 дні · активне</div><h3>Livsha Lab<span></span></h3><p class="say">«Понад 200 стоматологів довіряють.» Циркон від 1700 грн/од., персональний менеджер, фотопротокол, безкоштовна доставка.</p>
+<p class="take"><b>Взяти:</b> Одна цифра-доказ і одна конкретна ціна замість «якісно та надійно».</p><a class="more" href="catalog/#ad-2045329306167591">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1455205175938762"><img src="thumbs/ua_identity_1455205175938762.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ФОТО</span></a>
+<div class="at"><div class="dur">6 днів · активне</div><h3>IDentity Lab<span> · Одеса</span></h3><p class="say">Лабораторія рекламує не роботи, а дводенний курс для лікарів «Функціональна стоматологія» в Одесі. 12 оголошень — найбільше після FrankoLab.</p>
+<p class="take"><b>Взяти:</b> Навчання як вхід до лікаря: прийшов на курс — знає лабораторію.</p><p class="skip"><b>Не брати:</b> Курс — окремий продукт; без пропозиції співпраці він не приводить замовлення сам.</p><a class="more" href="catalog/#ad-1455205175938762">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-917958421315718"><img src="thumbs/ua_fordental_917958421315718.jpg" alt="" loading="lazy" class=""><span class="tag">UA · ФОТО</span></a>
+<div class="at"><div class="dur">3 дні</div><h3>For Dental<span> · Дніпро</span></h3><p class="say">«Шукаєте надійну лабораторію? Втомилися від корекцій та зривів термінів?» Перелік матеріалів, «напишіть у Direct».</p>
+<p class="take"><b>Взяти:</b> Сильний перший рядок про корекції та терміни.</p><p class="skip"><b>Не брати:</b> Єдиний шлях — Direct в Instagram: лікар не бачить умов і цін до розмови.</p><a class="more" href="catalog/#ad-917958421315718">Дивитися в каталозі →</a></div></article></div><div class="ads" data-p="world" hidden><article class="ad rv"><a class="ph" href="catalog/#ad-742381155207373"><img src="thumbs/tr_focuss_742381155207373.jpg" alt="" loading="lazy" class=""><span class="tag">TR · ФОТО</span></a>
+<div class="at"><div class="dur">464 дні · активне</div><h3>Focuss Dental<span> · Туреччина</span></h3><p class="say">«Лабораторія-експерт у цифрових технологіях»: перелік робіт — монолітні коронки, реставрації на титані, E.max, All-on-4/All-on-6.</p>
+<p class="take"><b>Взяти:</b> Фото реальної роботи на імплантах + чіткий перелік того, що лабораторія робить.</p><a class="more" href="catalog/#ad-742381155207373">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1104885645169464"><img src="thumbs/tr_yunev_1104885645169464.jpg" alt="" loading="lazy" class=""><span class="tag">TR · ВІДЕО 0:40</span></a>
+<div class="at"><div class="dur">403 дні · активне</div><h3>Yunev Dental Lab<span> · Туреччина</span></h3><p class="say">Ліцензована лабораторія з повним обладнанням: відео цеху, техніки за роботою, цифрові рішення на кожному етапі.</p>
+<p class="take"><b>Взяти:</b> Відео виробництва 30–40 с: лікар бачить, де і як роблять його роботу.</p><a class="more" href="catalog/#ad-1104885645169464">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1420607273173558"><img src="thumbs/tr_np_1420607273173558.jpg" alt="" loading="lazy" class=""><span class="tag">TR · ВІДЕО 0:22</span></a>
+<div class="at"><div class="dur">213 днів</div><h3>NP Dental Labor<span> · Туреччина</span></h3><p class="say">«Ваш 100% цифровий партнер для стоматологів.» 60 років досвіду, імплантати, балочні системи — швидко й точно.</p>
+<p class="take"><b>Взяти:</b> Слово «партнер» і досвід цифрою в першому рядку.</p><a class="more" href="catalog/#ad-1420607273173558">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1099556742285509"><img src="thumbs/de_stroh_1099556742285509.jpg" alt="" loading="lazy" class="contain"><span class="tag">DE · ФОТО</span></a>
+<div class="at"><div class="dur">322 дні</div><h3>Stroh &amp; Scheuerpflug<span> · Німеччина</span></h3><p class="say">«Який інтраоральний сканер підходить вашій практиці?» Безкоштовний 30-хвилинний онлайн-воркшоп для лікарів.</p>
+<p class="take"><b>Взяти:</b> Корисний вебінар як вхід до співпраці: лабораторія — експерт, а не продавець.</p><a class="more" href="catalog/#ad-1099556742285509">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1843845356311753"><img src="thumbs/pl_scanlab_1843845356311753.jpg" alt="" loading="lazy" class=""><span class="tag">PL · ВІДЕО 0:30</span></a>
+<div class="at"><div class="dur">143 дні</div><h3>Scanlab<span> · Польща</span></h3><p class="say">«Шукаєте лабораторію, яка дотримується термінів, легко на зв&#x27;язку і робить без виправлень?» 20 оголошень з цим відео.</p>
+<p class="take"><b>Взяти:</b> Три болі лікаря одним питанням: терміни, зв&#x27;язок, виправлення.</p><a class="more" href="catalog/#ad-1843845356311753">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1001576132419911"><img src="thumbs/de_loeger_1001576132419911.jpg" alt="" loading="lazy" class="contain"><span class="tag">DE · ФОТО</span></a>
+<div class="at"><div class="dur">134 дні</div><h3>Löger &amp; Grothe<span> · Німеччина</span></h3><p class="say">«All-on-4 — одна з найскладніших конструкцій в імплантології», тому потрібен досвід; відкриті STL-файли, −10% на першу роботу.</p>
+<p class="take"><b>Взяти:</b> Складність тоталу як аргумент за експертну лабораторію + знижка на першу роботу.</p><p class="skip"><b>Не брати:</b> Банер перевантажений текстом — у стрічці не читається.</p><a class="more" href="catalog/#ad-1001576132419911">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1431095782328744"><img src="thumbs/de_dandy_1431095782328744.jpg" alt="" loading="lazy" class=""><span class="tag">DE · ФОТО</span></a>
+<div class="at"><div class="dur">31 день · активне</div><h3>Dandy<span> · Німеччина</span></h3><p class="say">«Якість Кудамму — ціни Кройцберга»: коронка з цирконію від 159 €, 6 днів виготовлення, 10 років гарантії.</p>
+<p class="take"><b>Взяти:</b> Ціна, термін і гарантія одним рядком — умови видно до першого дзвінка.</p><a class="more" href="catalog/#ad-1431095782328744">Дивитися в каталозі →</a></div></article><article class="ad rv"><a class="ph" href="catalog/#ad-1608029670533828"><img src="thumbs/us_smile_1608029670533828.jpg" alt="" loading="lazy" class=""><span class="tag">US · ФОТО</span></a>
+<div class="at"><div class="dur">35 днів · активне</div><h3>Smile Dental Lab<span> · США</span></h3><p class="say">«Ваш наступний кейс починається тут»: $100 кредиту на першу роботу за реєстрацію, безкоштовна доставка, цифровий процес.</p>
+<p class="take"><b>Взяти:</b> Бонус на перший кейс — простий привід спробувати лабораторію.</p><a class="more" href="catalog/#ad-1608029670533828">Дивитися в каталозі →</a></div></article></div>
+<a class="cta rv" href="catalog/">Усі 114 оголошень Meta і 21 Google — у каталозі →</a><p class="src">Бібліотека реклами Meta, 2026-11-15. Тривалість — від старту до сьогодні або до кінця показу. Іноземні — переклад MESHKOR.</p></div></section><section id="google" class="sec"><div class="w">
+<div class="sh rv"><span class="no">08</span><span class="k">Google</span></div>
+<h2 class="rv">Три лабораторії в пошуку Google — <em>і п’ять форматів, що дає кожен.</em></h2><div class="gbs"><div class="gb rv"><h3>FrankoLab</h3><div class="gm">8 оголошень · Івано-Франківськ · показ до 14.11.2026</div><div class="gi"><img src="thumbs/g_frankolab_CR18164101183721963521.png" alt="" loading="lazy"><img src="thumbs/g_frankolab_CR10260161937924947969.png" alt="" loading="lazy"></div>
+<ul><li>«Зуботехнічна лабораторія — Тільки для клінік і лікарів»</li><li>«Приймаємо STL з будь-якого IOS» (3Shape, Medit, iTero, Primescan)</li><li>«Один менеджер на всі замовлення клініки»</li><li>Швидкі посилання: «Почніть з однієї роботи», «40 спеціалізованих техніків», «Більше 100 партнерських клінік»</li></ul><p class="take"><b>Взяти:</b> Фільтр «тільки для лікарів» прямо в заголовку і сумісність зі сканерами — лікар одразу розуміє, що це для нього.</p></div><div class="gb rv"><h3>Contour Lab</h3><div class="gm">9 оголошень · Львів / Київ · №1 за запитом «зуботехнічна лабораторія» по Україні</div><div class="gi"><img src="thumbs/g_contour-lab_CR01737282625912963073.png" alt="" loading="lazy"></div>
+<ul><li>«Ми впевнені у точності наших робіт, адже перевіряємо кожну роботу під мікроскопом»</li><li>Заголовки: «Зуботехнічна лабораторія», «Виробництво зубних протезів», «Купити абатмент»</li></ul><p class="take"><b>Взяти:</b> Контроль якості як конкретна процедура («під мікроскопом»), а не слово «контроль».</p></div><div class="gb rv"><h3>Цифра (Cifra Style)</h3><div class="gm">3 оголошення · Київ · також реклама в Картах</div><div class="gi"><img src="thumbs/g_cifra-style_CR11529092665270337537.png" alt="" loading="lazy"></div>
+<ul><li>«Ваш надійний партнер у стоматолога!»</li><li>Швидкі посилання: «Співпраця з лабораторією» — для клінік; «Для зубних техніків» — без вихідних</li><li>«Працюємо по всій Україні!»</li></ul><p class="take"><b>Взяти:</b> Окремі входи для клінік і для техніків в одному оголошенні.</p></div></div><div class="grp rv" style="margin-top:40px">Формати Google — натисніть, щоб розгорнути</div><details class="gf rv"><summary><b>Пошук</b><span>Оголошення у видачі, коли лікар сам шукає лабораторію або послугу</span></summary><div class="gfb"><div><small>Робити</small>Окремі групи під тип робіт (тотал на імплантах, вініри, фрезерування за STL); «тільки для лікарів і клінік» у заголовку; мінус-слова пацієнтських запитів</div><div><small>Не робити</small>Змішувати запити лікарів і пацієнтів; українська й російська в одному оголошенні</div><div><small>Хто вже використовує</small>Contour Lab, FrankoLab, Цифра</div></div></details><details class="gf rv"><summary><b>Performance Max</b><span>Одна кампанія на пошук, YouTube, Карти, Gmail і сайти-партнери; Google сам шукає аудиторію</span></summary><div class="gfb"><div><small>Робити</small>Якісні фото робіт і відео процесу; сигнали аудиторії (відвідувачі сайту, база лікарів); налаштовані конверсії — заявка і дзвінок</div><div><small>Не робити</small>Запускати без конверсій: система піде туди, де дешевше, — до пацієнтів</div><div><small>Хто вже використовує</small>не виявлено</div></div></details><details class="gf rv"><summary><b>Google Карти і профіль компанії</b><span>Лабораторія на карті за запитом «зуботехнічна лабораторія» поруч</span></summary><div class="gfb"><div><small>Робити</small>Повний профіль: категорія, фото лабораторії й робіт, години, відгуки лікарів; реклама в Картах</div><div><small>Не робити</small>Профіль без відгуків і фото</div><div><small>Хто вже використовує</small>Цифра — реклама в Картах; в Одесі в Картах вгорі iDentity (5,0, 88 відгуків) і CreaLAB (4,1, 81)</div></div></details><details class="gf rv"><summary><b>YouTube і Demand Gen</b><span>Відео в YouTube і стрічках Google</span></summary><div class="gfb"><div><small>Робити</small>Ті самі відео 20–40 с, що для Meta: процес, тотал з лікарем, техніки</div><div><small>Не робити</small>Рекламні ролики без роботи в кадрі</div><div><small>Хто вже використовує</small>FrankoLab — відео з Ivoclar</div></div></details><details class="gf rv"><summary><b>Ремаркетинг</b><span>Повторний показ лікарям, які були на сайті</span></summary><div class="gfb"><div><small>Робити</small>Окремі оголошення «повернутися»: кейс + умови першої роботи</div><div><small>Не робити</small>Показувати те саме оголошення, яке лікар уже бачив</div><div><small>Хто вже використовує</small>не виявлено</div></div></details><p class="src">Центр прозорості Google Ads, видача google.com.ua, Google Карти, 2026-11-15. «Робити / не робити» — рекомендації MESHKOR.</p></div></section><section id="vysnovky" class="sec"><div class="w">
+<div class="sh rv"><span class="no">09</span><span class="k">Висновки</span></div>
+<h2 class="rv">Робити і не робити: <em>що показала реклама конкурентів.</em></h2>
+<div class="dd"><div class="do"><div class="ch">Робити</div><ul><li class="rv"><b>Звертатися до конкретного лікаря</b><span>«Працюєте в концепціях ALL-ON-X?» (FrankoLab, 305 днів) · «Тільки для клінік і лікарів» (FrankoLab, Google)</span></li><li class="rv"><b>Називати біль словами лікаря</b><span>переробки, корекції, терміни, «важко зв&#x27;язатися» — FrankoLab, Scanlab, Zirkondan, For Dental</span></li><li class="rv"><b>Давати один доказ цифрою</b><span>«35 000 конструкцій, 13 країн», «200 стоматологів», «40 техніків», «перевіряємо кожну роботу під мікроскопом»</span></li><li class="rv"><b>Знижувати ризик першої роботи</b><span>«Почніть з однієї роботи» (FrankoLab), «перші три роботи» (Zirkondan), −10% (Löger &amp; Grothe), $100 кредиту (Smile Dental)</span></li><li class="rv"><b>Показувати умови до дзвінка</b><span>ціна + термін + гарантія: «коронка від 159 €, 6 днів, 10 років гарантії» (Dandy)</span></li><li class="rv"><b>Давати користь до продажу</b><span>вебінар «Який сканер обрати» (Stroh, 322 дні), курси для лікарів (IDentity), «приймаємо STL з будь-якого сканера»</span></li></ul></div><div class="dont"><div class="ch">Не робити</div><ul><li class="rv"><b>Загальні слова без доказу</b><span>«гарантуємо якість, точність і відповідальний підхід», «працюємо для Вас» — у вибірці такі оголошення крутились 3 і 10 днів</span></li><li class="rv"><b>Лише «напишіть у Direct»</b><span>лікар не бачить умов і цін до розмови; в Україні 30 з 66 оголошень ведуть у месенджер або Instagram, на сайт — лише 18</span></li><li class="rv"><b>«Контроль» без процедури</b><span>слово «контроль» пишуть троє, а що саме перевіряють — лише Contour Lab («під мікроскопом»)</span></li><li class="rv"><b>Змішувати адресатів</b><span>лікарі, техніки й пацієнти в одному оголошенні або суміш мов — розмиває, кому це</span></li></ul>
+<div class="useful rv"><div class="k">Корисно знати</div><ul><li>Тривалість показу — найкращий доступний сигнал: бібліотеки не показують заявок і витрат.</li><li>63 зі 114 оголошень для лікарів — відео; половина — до 30 секунд, 51 з 63 — не довші за 40 секунд.</li><li>FrankoLab тримає 23 варіації одночасно — так перевіряють, який текст працює краще.</li><li>Кожне оголошення з цього документа можна відкрити в каталозі — з відео, фото й оцінкою.</li></ul></div></div></div></div></section><section id="kontseptsii" class="sec dark"><div class="w">
+<div class="sh rv"><span class="no">10</span><span class="k">Рекомендації</span></div>
+<h2 class="rv">П’ять рекламних концепцій для Kologrivov — <em>з того, що працює в інших.</em></h2><div class="ccs"><div class="cc rv"><i>01</i><h3>Один технік — на всі ваші роботи</h3><q>«Ваші роботи веде один технік. Він знає ваші вимоги і відповідає за результат від скану до фінальної перевірки.»</q><p><small>На чому базується</small>Вільна позиція: 0 з 12 лабораторій; №1 бажання лікарів в опитуванні</p><p><small>Візуал</small>Портрет техніка за робочим місцем з роботою в руках, ім’я і спеціалізація</p><p><small>Формат</small>Статика 4:5 + відео 20–30 с «знайомтесь, ваш технік»</p><p class="cond"><small>Умова</small>Спершу закріпити техніка за кожним лікарем і запровадити фінальну перевірку</p></div><div class="cc rv"><i>02</i><h3>Тотал на імплантах: дизайн погоджуєте до фрезерування</h3><q>«Цифровий дизайн усмішки — до початку лікування. Ви погоджуєте, ми фрезеруємо.»</q><p><small>На чому базується</small>All-on-X — найдовші оголошення: FrankoLab 305 днів, Löger &amp; Grothe 134</p><p><small>Візуал</small>Екран з цифровим дизайном поруч з готовим тоталом на моделі</p><p><small>Формат</small>Карусель «дизайн → модель → робота» + відео процесу</p></div><div class="cc rv"><i>03</i><h3>Перша робота — щоб переконатися</h3><q>«Надішліть одну роботу. Умови для нових лікарів — у відповідь на заявку.»</q><p><small>На чому базується</small>«Перші три роботи» (Zirkondan), «Почніть з однієї роботи» (FrankoLab)</p><p><small>Візуал</small>Одна робота крупно на темному тлі, мінімум тексту</p><p><small>Формат</small>Статика 4:5 і 9:16 для сторіс, лід-форма</p><p class="cond"><small>Умова</small>Визначити умови першої роботи</p></div><div class="cc rv"><i>04</i><h3>GC Competence Lab в Одесі</h3><q>«Сертифікована лабораторія GC Competence Lab. Засновник — Opinion Leader GC.»</q><p><small>На чому базується</small>Міжнародний статус у рекламі показує лише FrankoLab (Ivoclar, 15 оголошень); GC не згадує ніхто з 12</p><p><small>Візуал</small>Робота з матеріалів GC + справжній сертифікат лабораторії</p><p><small>Формат</small>Статика 4:5, банер для Google</p></div><div class="cc rv"><i>05</i><h3>Навчання від Opinion Leader GC</h3><q>«Воркшоп для ортопедів: естетика тоталу на імплантах.»</q><p><small>На чому базується</small>Вебінар Stroh — 322 дні; курси IDentity — 12 оголошень</p><p><small>Візуал</small>Засновник з лікарями за робочим столом, дата і тема</p><p><small>Формат</small>Статика 4:5 + реєстрація через лід-форму</p><p class="cond"><small>Умова</small>Провести хоча б один воркшоп</p></div></div><p class="src">Рекомендація MESHKOR на основі підбірки та опитування лікарів із брифу. «Умова» — що має бути правдою до показу.</p></div></section><section id="kreatyvy" class="sec"><div class="w">
+<div class="sh rv"><span class="no">11</span><span class="k">Креативи</span></div>
+<h2 class="rv">Як виділитися в стрічці лікаря: <em>6 креативів однієї серії.</em></h2>
+<div class="rules"><div class="rv"><b>Темне тло + один оранжевий акцент</b><span>Ті самі кольори, що в знаку Kologrivov: графіт, білий, оранжевий. Колір працює як підпис ще до того, як прочитано логотип.</span></div><div class="rv"><b>Один предмет, дуже близько</b><span>Не стіл техніка і не «команда», а одна робота в макро. Лікар оцінює роботу очима.</span></div><div class="rv"><b>Заголовок ≤ 5 слів мовою лікаря</b><span>Скан, рефрактор, абатмент, тотал — слова, які пацієнт пропустить, а лікар зупиниться.</span></div><div class="rv"><b>Одна сітка на всю серію</b><span>Логотип, рубрика, заголовок, строка для фахівця, призив — завжди на тих самих місцях. Після 2–3 показів серію впізнають.</span></div></div>
+<div class="crs"><div class="cr rv"><div class="cm"><img src="thumbs/cr_1_skan.jpg" alt="Від вашого скану — до кераміки." loading="lazy"></div><div class="ct"><div class="n">01 · Цифра → ремесло</div><h3>«Від вашого скану — до кераміки.»</h3>
+<p>Сітка скану — те, що лікар щодня бачить у своїй програмі. Він впізнає її, ще не прочитавши текст.</p><ul><li>Ваш STL — наша кераміка.</li><li>Цифра на вході. Ручна робота на виході.</li><li>Надішліть скан — отримайте кераміку.</li></ul></div></div><div class="cr rv"><div class="cm"><img src="thumbs/cr_2_total.jpg" alt="Тотал на імплантах." loading="lazy"></div><div class="ct"><div class="n">02 · Імплантологія</div><h3>«Тотал на імплантах.»</h3>
+<p>Найдорожча робота для ортопеда — і найдовші оголошення в ніші (FrankoLab — 305 днів). Тема, на яку лікар зупиняється сам.</p><ul><li>Тотал, який ви погоджуєте до фрезерування.</li><li>All-on-X: від дизайну до балки.</li><li>Цифровий дизайн тоталу — до початку лікування.</li></ul><p class="cond"><small>Умова</small>Сформулювати разом з лабораторією: як саме лікар погоджує дизайн.</p></div></div><div class="cr rv"><div class="cm"><img src="thumbs/cr_3_keis.jpg" alt="Ваш кейс. Ваш технік." loading="lazy"></div><div class="ct"><div class="n">03 · Персонально</div><h3>«Ваш кейс. Ваш технік.»</h3>
+<p>У рекламі «персонального техніка» не обіцяє жодна з 12 лабораторій України; в опитуванні лікарів це бажання №1.</p><ul><li>Один технік на всі ваші роботи.</li><li>Технік, який знає ваші вимоги.</li><li>Не черга замовлень — ваш технік.</li></ul><p class="cond"><small>Умова</small>Технік справді закріплений за лікарем.</p></div></div><div class="cr rv"><div class="cm"><img src="thumbs/cr_4_kontrol.jpg" alt="Кожна робота — під збільшенням." loading="lazy"></div><div class="ct"><div class="n">04 · Контроль якості</div><h3>«Кожна робота — під збільшенням.»</h3>
+<p>Замість слова «контроль», яке пишуть усі, — показати саму перевірку. Лікар бачить край і посадку, як на своєму мікроскопі.</p><ul><li>Посадку перевіряємо до вас.</li><li>Перевірено під мікроскопом.</li><li>Край, за який не соромно.</li></ul><p class="cond"><small>Умова</small>Фінальна перевірка під збільшенням справді запроваджена.</p></div></div><div class="cr rv"><div class="cm"><img src="thumbs/cr_5_viniry.jpg" alt="Вініри на рефракторі." loading="lazy"></div><div class="ct"><div class="n">05 · Естетика</div><h3>«Вініри на рефракторі.»</h3>
+<p>Лікар-естетист впізнає «правильний» край за пів секунди — це мова ремесла, а не реклами.</p><ul><li>Опалесценція, як у живого зуба.</li><li>Тонко. Світло. На рефракторі.</li><li>Вініри з ручним нанесенням кераміки.</li></ul></div></div><div class="cr rv v"><div class="cm"><video src="creatives/media/kologrivov_skan_keramika_reels_cta_10s.mp4" poster="thumbs/cr_6_reels.jpg" autoplay muted loop playsinline preload="none"></video></div><div class="ct"><div class="n">06 · Reels · 10 с</div><h3>«Від вашого скану — до кераміки.»</h3>
+<p>Рух з першого кадру (лінія сканування) + текст, що з’являється синхронно з картинкою. Текст і кнопка — у безпечній зоні Reels.</p><ul><li>Ваш скан. Наша кераміка. 10 секунд.</li><li>Як STL стає коронкою.</li><li>Надішліть перший скан.</li></ul></div></div></div>
+<div class="grp rv" style="margin-top:40px">Як запускати серію</div><div class="rules light"><div class="rv"><b>3–4 креативи одночасно</b><span>В одній кампанії — кілька кадрів серії. Meta сама віддасть показ тому, на який лікарі реагують краще.</span></div><div class="rv"><b>Формат під місце показу</b><span>Стрічка — 4:5 (1080×1350). Reels і сторіс — 9:16 з текстом у безпечній зоні.</span></div><div class="rv"><b>Оновлювати кожні 2–4 тижні</b><span>Та сама сітка, новий предмет або новий заголовок з переліку «інші заголовки».</span></div><div class="rv"><b>Рахувати заявки по кожному кадру</b><span>Не кліки, а заявки від лікарів і перші роботи — тоді видно, який заголовок «продає».</span></div></div>
+<a class="cta rv" href="creatives/">Креативи в повному розмірі →</a><p class="src">Фони згенеровані нейромережею за промптами MESHKOR, текст і логотип накладені поверх.</p></div></section><section id="skhema" class="sec"><div class="w">
+<div class="sh rv"><span class="no">12</span><span class="k">Схема</span></div>
+<h2 class="rv">Як зібрати рекламу в Meta для лікарів: <em>п’ять кроків.</em></h2><div class="scs"><div class="sc rv"><div class="sct"><i>1</i>Аудиторія</div><ul><li>Лікарі-стоматологи: ортопеди, хірурги, власники клінік</li><li>Одеса й область — усі види робіт</li><li>Уся Україна — тотали й цифровий дизайн з доставкою</li><li>Фільтр у формі: «Ви лікар чи клініка?»</li></ul></div><div class="sc rv"><div class="sct"><i>2</i>Креатив</div><ul><li>3–5 концепцій зі стор. 16</li><li>Відео 20–40 с + статика 4:5</li><li>Справжні роботи й техніки в кадрі</li><li>Оновлювати кожні 2–4 тижні</li></ul></div><div class="sc rv"><div class="sct"><i>3</i>Пропозиція</div><ul><li>Прайс за заявку</li><li>Умови першої роботи</li><li>Закріплений технік</li><li>Без ціни в оголошенні</li></ul></div><div class="sc rv"><div class="sct"><i>4</i>Куди веде</div><ul><li>Лід-форма Meta з питанням-фільтром</li><li>Або сторінка «Для лікарів» на сайті</li><li>Дзвінок техніка протягом години</li></ul></div><div class="sc rv"><div class="sct"><i>5</i>Повторний контакт</div><ul><li>Тим, хто переглянув відео на 50%+</li><li>Кейси «до / після» з лікарем</li><li>Нагадування про умови першої роботи</li></ul></div></div>
+<div class="note o rv" style="margin-top:28px"><b>Що вважати результатом.</b> Не кліки й охоплення, а <b>заявка від лікаря</b> і <b>перша робота</b> — рахувати окремо з першого дня, інакше концепції не порівняти.</div></div></section>
+<section class="fin"><div class="w"><h2>Усе дослідження — під рукою</h2><p>Каталог з відео й фото кожного оголошення, PDF для команди, креативи в повному розмірі.</p>
+<div class="bt2"><a href="catalog/">Каталог реклами</a><a class="d" href="kologrivov_reklama.pdf" download>Завантажити PDF</a><a href="creatives/">Креативи</a></div></div></section>
+<footer class="foot"><div class="w"><span>Kologrivov Dental Design · Дослідження ринку · дані знято 2026-11-15</span><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a></div></footer>
 
-/* do / dont */
-.dd{ display:grid; grid-template-columns:1.15fr 1fr; gap:10mm; margin-top:6mm }
-.dd .ch{ font:800 13pt "Exo 2"; padding-bottom:2mm; border-bottom:1.4px solid var(--ink) }
-.dd .do .ch{ color:var(--orange); border-color:var(--orange) }
-.dd ul{ list-style:none } .dd .col>ul>li{ padding:3.3mm 0 3.3mm 7mm; border-bottom:1px solid var(--line); position:relative }
-.dd .col>ul>li b{ display:block; font-size:10.5pt } .dd .col>ul>li span{ display:block; font-size:8.7pt; color:var(--ink2); line-height:1.45; margin-top:.6mm }
-.dd .do>ul>li:before{ content:""; position:absolute; left:0; top:3mm; width:3.4mm; height:3.9mm; background:var(--orange); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%) }
-.dd .dont>ul>li:before{ content:""; position:absolute; left:0; top:3mm; width:3.4mm; height:3.9mm; background:var(--ink); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%) }
-.useful{ margin-top:5mm; background:var(--paper); padding:4mm 5mm } .useful .kicker{ color:var(--ink) }
-.useful li{ font-size:8.6pt; line-height:1.45; color:var(--ink2); padding:1.1mm 0 }
-
-/* hooks */
-.hooks{ display:grid; grid-template-columns:1fr 70mm; gap:9mm; margin-top:6mm }
-.hgrid{ display:grid; grid-template-columns:1fr 1fr; gap:0 8mm }
-.hk{ border-top:1px solid var(--line); padding:2.6mm 0 }
-.hq{ font:600 10.2pt/1.32 "Exo 2"; color:var(--ink) }
-.hm{ font-size:7.6pt; color:var(--grey); margin-top:1mm }
-.hm span{ color:var(--orange); font-weight:700; margin-right:2mm; text-transform:uppercase; letter-spacing:.06em; font-size:7pt }
-.hside{ background:var(--ink); color:#e9e4e0; padding:6mm }
-.hside .kicker{ color:var(--orange); margin-bottom:2mm }
-.hside p{ font-size:8.8pt; line-height:1.5; margin-top:2mm } .hside b{ color:var(--white) }
-/* tables */
-table.tb{ width:100%; border-collapse:collapse; margin-top:5mm; font-size:8.6pt }
-.tb th{ font:600 7.4pt "Exo 2"; text-transform:uppercase; letter-spacing:.05em; color:var(--grey); text-align:left; padding:0 2mm 2.4mm; border-bottom:1.4px solid var(--ink) }
-.tb td{ padding:2.5mm 2mm; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.4; color:var(--ink2) }
-.tb td b{ color:var(--ink); font-size:9pt } .tb td span{ display:block; font-size:7.8pt; color:var(--grey); margin-top:.8mm }
-.tb td.y{ color:var(--ink); font-weight:600; border-left:1.6mm solid var(--orange) }
-.tb td.p{ border-left:1.6mm solid var(--grey) } .tb td.n{ border-left:1.6mm solid var(--ink) }
-.tb.gf td{ padding:3.2mm 2mm }
-/* prices */
-.prw{ display:grid; grid-template-columns:1fr 100mm; gap:10mm; margin-top:7mm }
-.pr{ display:grid; grid-template-columns:48mm 1fr; gap:5mm; align-items:center; padding:5.6mm 0; border-bottom:1px solid var(--line) }
-.pv{ font:800 20pt "Exo 2"; color:var(--orange) } .pr b{ display:block; font-size:10pt } .pr span{ display:block; font-size:8pt; color:var(--grey); margin-top:.8mm }
-/* funnel */
-.fw{ display:grid; grid-template-columns:1fr 1fr; gap:12mm; margin-top:7mm }
-.flow .st{ position:relative; padding:5mm 0 5mm 13mm; border-bottom:1px solid var(--line) }
-.flow .st i{ position:absolute; left:0; top:4.4mm; width:8.6mm; height:9.8mm; display:grid; place-items:center; font:800 9pt "Exo 2"; font-style:normal; background:var(--ink); color:var(--white); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%) }
-.flow .st.o i{ background:var(--orange) }
-.flow .st b{ display:block; font-size:10pt } .flow .st span{ display:block; font-size:8.3pt; color:var(--grey); margin-top:.6mm }
-/* concepts */
-.ccs{ display:grid; grid-template-columns:repeat(5,1fr); gap:5mm; margin-top:7mm }
-.cc{ border-top:1.4px solid var(--ink); padding-top:3mm; position:relative }
-.cc i{ font:800 22pt "Exo 2"; font-style:normal; color:var(--orange); display:block; line-height:1 }
-.cc h3{ font-size:10.5pt; line-height:1.25; margin-top:2mm; min-height:13mm }
-.cc .q{ font-size:8.6pt; line-height:1.45; background:var(--paper); padding:3mm; margin-top:2mm; color:var(--ink) }
-.cc p{ font-size:7.9pt; line-height:1.45; color:var(--ink2); margin-top:2.4mm }
-.cc .cond{ border-top:1px solid var(--line); padding-top:2mm } .cc .cond b{ color:var(--orange) }
-/* scheme */
-.scs{ display:grid; grid-template-columns:repeat(5,1fr); gap:4mm; margin-top:7mm }
-.sc{ background:var(--paper); padding:5mm 4.5mm; position:relative; min-height:92mm }
-.sc .sh{ font:700 11pt "Exo 2"; display:flex; align-items:center; gap:2.4mm; padding-bottom:2.6mm; border-bottom:1.4px solid var(--ink) }
-.sc .sh i{ width:6.4mm; height:7.3mm; display:inline-grid; place-items:center; font:800 8pt "Exo 2"; font-style:normal; background:var(--orange); color:var(--white); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%) }
-.sc ul{ list-style:none; margin-top:2mm } .sc li{ font-size:9.4pt; line-height:1.45; padding:2.6mm 0; border-bottom:1px solid var(--line) }
-/* catalog page */
-.catw{ display:grid; grid-template-columns:1fr 100mm; gap:12mm; margin-top:8mm; align-items:start }
-.catl{ list-style:none; margin-top:5mm } .catl li{ font-size:10pt; line-height:1.5; padding:2.6mm 0; border-bottom:1px solid var(--line); color:var(--ink2) } .catl b{ color:var(--ink) }
-.catbox{ background:var(--ink); color:var(--white); padding:8mm } .catbox .kicker{ color:var(--orange) }
-.catbox .url{ font:700 15pt "Exo 2"; margin-top:3mm; word-break:break-all } .catbox p{ font-size:8.5pt; color:#a49c97; margin-top:3mm }
-
-.fl .bar{ padding:4.2mm 0 }
-.fl .note{ font-size:9.4pt; margin-top:6mm }
-
-.catprev{ width:100%; margin-top:5mm; border:1px solid var(--line); height:78mm; object-fit:cover; object-position:top }
-
-.foot a{ color:inherit; text-decoration:none } .cover a.by{ text-decoration:none }
-.catbox a.url{ display:block; color:var(--white); text-decoration:none }
-.gb a.gi{ text-decoration:none } .gb a.glink{ display:inline-block; font-size:7.4pt; color:var(--grey); margin-top:2mm; text-decoration:none; border-bottom:1px solid var(--line) }
-/* креативи (стор. 17–18) */
-.rules{ display:grid; grid-template-columns:repeat(4,1fr); gap:4mm; margin-top:4.5mm; background:var(--ink); color:#fff; padding:3.5mm 5mm }
-.rules b{ display:block; font:700 9pt "Exo 2"; color:var(--orange) } .rules span{ display:block; font-size:7.4pt; line-height:1.4; color:#d9d2cd; margin-top:1mm }
-.crs{ display:grid; grid-template-columns:repeat(3,1fr); gap:6mm; margin-top:5mm }
-.cr{ border-top:1.4px solid var(--ink); padding-top:3mm }
-.crt{ display:flex; gap:4mm }
-.crimg{ flex:0 0 auto; display:block; position:relative; height:58mm; background:#1A1615 } .crimg img{ height:100%; display:block }
-.crimg .play{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:11mm; height:11mm; border-radius:50%; background:var(--orange); color:#fff; display:grid; place-items:center; font-size:11pt; padding-left:.6mm }
-.crh i{ font:800 18pt "Exo 2"; font-style:normal; color:var(--orange); display:block; line-height:1 }
-.crh .kicker{ margin-top:1.5mm; font-size:7pt } .crh h3{ font-size:11pt; line-height:1.2; margin-top:1.5mm }
-.crh p{ font-size:7.8pt; line-height:1.42; color:var(--ink2); margin-top:2mm }
-.cr .hk{ font-size:8pt; line-height:1.45; margin-top:3mm; color:var(--ink) }
-.cr .alt{ background:var(--paper); padding:2.5mm 3.5mm; margin-top:2.5mm } .cr .alt .kicker{ font-size:6.8pt; color:var(--orange) }
-.cr .alt ul{ list-style:none; margin-top:1mm } .cr .alt li{ font:600 8.6pt/1.45 "Exo 2" } .cr .alt li:before{ content:"— "; color:var(--orange) }
-.cr .cond{ font-size:7.4pt; line-height:1.4; color:var(--ink2); margin-top:2mm } .cr .cond b{ color:var(--orange) }
-.src a{ color:inherit }
-.rules.launch{ grid-template-columns:30mm repeat(4,1fr); margin-top:7mm; background:var(--paper); color:var(--ink); border-left:2.2mm solid var(--orange) }
-.rules.launch .lk{ font:800 11pt/1.2 "Exo 2"; color:var(--ink) } .rules.launch span{ color:var(--ink2) }
-.crimg .play{ top:72% }
-</style></head><body><style>
-.wbar{position:sticky;top:0;z-index:9;background:#231F1E;color:#fff;font:600 14px Manrope,Arial,sans-serif;display:flex;gap:6px 18px;flex-wrap:wrap;align-items:center;justify-content:center;padding:10px 16px;margin-bottom:8mm}
-.wbar b{font:800 15px "Exo 2";color:#F5622F;margin-right:6px} .wbar a{color:#fff;text-decoration:none;border-bottom:1px solid #F5622F}
-@media print{.wbar{display:none}}
-</style><div class="wbar"><b>Пакет 1 · Реклама</b><a href="kologrivov_reklama.pdf" download>Завантажити PDF</a><a href="catalog/">Каталог реклами</a><a href="creatives/">Креативи</a></div><section class="page cover">
- <div class="l">
-  <img class="wm" src="assets/kolo_wordmark_hd.png" alt="Kologrivov Dental Design">
-  <div class="t">
-   <div class="kicker">Дослідження ринку · Пакет 1 «Реклама» · листопад 2026</div>
-   <h1>Реклама зуботехнічних<br>лабораторій: хто на що тисне —<br><span>і що з цього взяти</span></h1>
-   <p class="sub">Meta і Google в Україні та світі: аргументи, перші рядки, пропозиції на вході, ціни, куди веде реклама. Підбірка найкращих прийомів і рекомендовані концепції для Kologrivov.</p>
-  </div>
-  <div class="stats">
-   <div><div class="num">150</div><p>оголошень Meta<br>з 6 країн</p></div>
-   <div><div class="num">40</div><p>лабораторій, що<br>рекламуються лікарям</p></div>
-   <div><div class="num">53</div><p>рекламодавці<br>перевірені в Google</p></div>
-   <div><div class="num">73</div><p>пошукові запити<br>по містах України</p></div>
-  </div>
- </div>
- <div class="r">
-  <svg class="iso" viewBox="0 0 125 210" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="hx" width="20" height="34.64" patternUnits="userSpaceOnUse"><path d="M10 0 L20 5.77 L20 17.32 L10 23.09 L0 17.32 L0 5.77 Z M10 23.09 L10 34.64" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width=".35"/></pattern></defs><rect width="125" height="210" fill="url(#hx)"/></svg>
-  <img class="mark" src="assets/kolo_mark_dark.png" alt="">
-  <div class="toc"><div class="kicker">У документі</div>
-   <div class="it"><b>01</b><div>Ринок і аргументи<span>канали, на що тиснуть, хуки, пропозиції на вході, ціни, куди веде реклама</span></div></div>
-   <div class="it"><b>02</b><div>Підбірка прийомів<span>Meta — Україна і світ, Google — приклади та формати</span></div></div>
-   <div class="it"><b>03</b><div>Висновки і рекомендації<span>робити і не робити, 5 концепцій, 6 креативів, схема реклами в Meta, каталог</span></div></div>
-  </div>
-  <a class="by" href="https://meshkor.io/">Підготовлено <img src="assets/meshkor_logo.svg" alt="MESHKOR"> meshkor.io</a>
- </div></section><section class="page div">
- <div class="dl"><div class="bighex"><svg viewBox="0 0 78 88"><path d="M39 1.5 L76.5 23.2 L76.5 64.8 L39 86.5 L1.5 64.8 L1.5 23.2 Z" fill="none" stroke="#F5622F" stroke-width="1.6"/><path d="M39 44 L39 86.5 M39 44 L1.5 23.2 M39 44 L76.5 23.2" stroke="#F5622F" stroke-opacity=".35" stroke-width=".8"/></svg><span>01</span></div></div>
- <div class="dr"><div class="kicker" style="color:#857c77">Пакет 1 · Реклама</div>
-  <h2>Реклама: хто на що тисне</h2>
-  <p class="lead">Які лабораторії купують увагу лікарів, у яких каналах, якими словами та пропозиціями — і що з цього варто взяти.</p>
-  <div class="kpis">
-   <div><div class="num o">40</div><p>лабораторій рекламуються лікарям у Meta, 6 країн</p></div>
-   <div><div class="num">114</div><p>оголошень для лікарів розібрано по одному</p></div>
-   <div><div class="num">305</div><p>днів — найдовше оголошення в Україні</p></div>
-  </div>
-  <div class="dtoc">
-   <div><b>3</b>Канали: Meta і Google</div><div><b>9</b>Підбірка: Meta, Україна</div>
-   <div><b>4</b>На що тиснуть конкуренти</div><div><b>11</b>Підбірка: Meta, світ</div>
-   <div><b>5</b>Перший рядок: 12 хуків</div><div><b>13</b>Google: приклади і формати</div>
-   <div><b>6</b>Пропозиції на вході</div><div><b>15</b>Робити і не робити</div>
-   <div><b>7</b>Ціни в рекламі</div><div><b>16</b>5 концепцій для Kologrivov</div>
-   <div><b>8</b>Куди веде реклама</div><div><b>17</b>6 креативів · 19 схема Meta · 20 каталог</div>
-  </div></div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">2</span></span></div></section><section class="page "><div class="kicker">01 · Канали</div><h2>Meta — де зараз усі конкуренти. <em>Google — де лікаря зустрічають лише троє</em></h2>
- <div class="cp"><div class="claim">
-   <div class="big">66<small>оголошень</small></div>
-   <p>показують лікарям в Україні <b>15 лабораторій через Facebook та Instagram</b>. Найактивніша — FrankoLab: 23 оголошення, 18 з них активні зараз.</p>
-   <p>У Google лікарям по всій Україні рекламуються <b>3 лабораторії — Contour Lab, FrankoLab і Цифра</b>. Вони використовують пошук, графічні банери, відео та рекламу в Картах.</p>
-   <div class="decide"><div class="kicker">Що це означає</div>
-    <p><b>У Meta</b> треба вирізнятися серед 15 лабораторій — тут вирішують креатив і пропозиція. <b>У Google</b> лікар, який сам шукає лабораторію, бачить лише трьох рекламодавців — тут вирішує присутність і точний текст. Канали доповнюють один одного.</p></div>
-  </div>
-  <div><div class="kicker" style="margin-bottom:2mm">Оголошення лабораторій для лікарів, Україна</div>
-   <div class="bars">
-    <div class="grp">Meta</div>
-    <div class="bar"><span>Усі лабораторії<small>15 рекламодавців</small></span><div class="track"><div class="fill o" style="width:100%"></div></div><span class="v">66</span></div>
-    <div class="bar"><span>FrankoLab<small>18 активні</small></span><div class="track"><div class="fill" style="width:34.8%"></div></div><span class="v">23</span></div>
-    <div class="bar"><span>IDentity Lab<small>курси для лікарів</small></span><div class="track"><div class="fill" style="width:18.2%"></div></div><span class="v">12</span></div>
-    <div class="bar"><span>Zirkondan.lab<small>ціна в тексті</small></span><div class="track"><div class="fill" style="width:15.2%"></div></div><span class="v">10</span></div>
-    <div class="grp">Google</div>
-    <div class="bar"><span>Contour Lab<small>№1 за «зуботехнічна лабораторія»</small></span><div class="track"><div class="fill" style="width:13.6%"></div></div><span class="v">9</span></div>
-    <div class="bar"><span>FrankoLab<small>пошук, банери, відео</small></span><div class="track"><div class="fill" style="width:12.1%"></div></div><span class="v">8</span></div>
-    <div class="bar"><span>Цифра (Cifra Style)<small>пошук і Карти</small></span><div class="track"><div class="fill" style="width:4.5%"></div></div><span class="v">3</span></div>
-   </div>
-   <p class="note">Найдовше в Meta крутиться оголошення FrankoLab про All-on-X — 305 днів, і воно досі активне. Рік ніхто не тримає рекламу, яка не приносить замовлень: це найкращий доступний сигнал, що вона окупається.</p>
-  </div></div>
- <div class="src">Джерела: Бібліотека реклами Meta — 150 оголошень, знято 2026-11-15 · Центр прозорості Google Ads — 53 рекламодавці, видача google.com.ua по 73 запитах у містах України, 2026-11-15. Бібліотеки не показують результатів реклами — тривалість показу є непрямим сигналом.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">3</span></span></div></section><section class="page "><div class="kicker">01 · На що тиснуть конкуренти</div><h2>12 лабораторій України в Meta: що обіцяють — <em>і чого не обіцяє ніхто</em></h2><p class="lead" style="font-size:9.5pt">Ми прочитали кожне оголошення і відмітили, на що воно тисне. Довжина смуги — скільки лабораторій з 12 використовують цей аргумент.</p><div class="lvs"><div class="lv"><div class="ln">Цифра, CAD/CAM</div>
-  <div class="lt"><div class="lf" style="width:83.3%"></div><span class="lnum">10 з 12</span></div>
-  <div class="lw"><b>FrankoLab, IDentity, Zirkondan, For Dental, Favorit Dent, Bauer's, Aspect-lab, Цифра, DioLab, timofiev</b><span>Є майже в усіх — вже не відрізняє.</span></div></div><div class="lv"><div class="ln">Терміни, без переробок</div>
-  <div class="lt"><div class="lf" style="width:41.7%"></div><span class="lnum">5 з 12</span></div>
-  <div class="lw"><b>FrankoLab, Zirkondan, For Dental, Livsha, DioLab</b><span>«Втомились від переробок і нагадувань про терміни?»</span></div></div><div class="lv"><div class="ln">Ціна прямо в тексті</div>
-  <div class="lt"><div class="lf" style="width:33.3%"></div><span class="lnum">4 з 12</span></div>
-  <div class="lw"><b>Zirkondan, Livsha, Bauer's, Aspect-lab</b><span>«Циркон від 1700 грн/од.», «балка — 150 €»</span></div></div><div class="lv"><div class="ln">Тотал, імпланти, All-on-X</div>
-  <div class="lt"><div class="lf" style="width:33.3%"></div><span class="lnum">4 з 12</span></div>
-  <div class="lw"><b>FrankoLab, Zirkondan, Aspect-lab, Цифра</b><span>«Працюєте в концепціях ALL-ON-X?»</span></div></div><div class="lv"><div class="ln">Цифри-докази</div>
-  <div class="lt"><div class="lf" style="width:25.0%"></div><span class="lnum">3 з 12</span></div>
-  <div class="lw"><b>FrankoLab, Livsha, timofiev</b><span>«35 000 конструкцій для лікарів із 13 країн»</span></div></div><div class="lv"><div class="ln">Прайс за заявку</div>
-  <div class="lt"><div class="lf" style="width:16.7%"></div><span class="lnum">2 з 12</span></div>
-  <div class="lw"><b>FrankoLab, Zirkondan</b><span>«Залишайте заявку та отримайте актуальний прайс»</span></div></div><div class="lv"><div class="ln">Умови для нових</div>
-  <div class="lt"><div class="lf" style="width:16.7%"></div><span class="lnum">2 з 12</span></div>
-  <div class="lw"><b>Zirkondan, Favorit Dent</b><span>«Перші три роботи скажуть більше, ніж реклама»</span></div></div><div class="lv"><div class="ln">Навчання лікарів</div>
-  <div class="lt"><div class="lf" style="width:8.3%"></div><span class="lnum">1 з 12</span></div>
-  <div class="lw"><b>IDentity Lab</b><span>Курси для стоматологів в Одесі</span></div></div><div class="lv free"><div class="ln">Персональний технік</div>
-  <div class="lt"><div class="lf" style="width:0.0%"></div><span class="lnum">0 з 12</span></div>
-  <div class="lw"><b>ніхто</b><span>Livsha — «персональний менеджер», FrankoLab у Google — «один менеджер», але не технік.</span></div></div></div>
- <div class="src">Джерело: тексти 66 оголошень 12 лабораторій для лікарів, Бібліотека реклами Meta (Україна), знято 2026-11-15; для FrankoLab додатково Google Ads. Позначки — за текстом оголошення.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">4</span></span></div></section><section class="page "><div class="kicker">01 · Перший рядок</div><h2>Перший рядок вирішує: <em>12 хуків, з яких починають конкуренти</em></h2>
- <div class="hooks"><div class="hgrid"><div class="hk"><div class="hq">«Працюєте в концепціях ALL-ON-X?»</div><div class="hm"><span>Звернення до вузького лікаря</span>FrankoLab · UA · 305 днів</div></div><div class="hk"><div class="hq">«Втомились від постійних переробок, корекцій і нагадування лабораторії про терміни?»</div><div class="hm"><span>Біль лікаря</span>FrankoLab · UA · 303 дні</div></div><div class="hk"><div class="hq">«Стоматолог або керівник клініки? Залишайте заявку та отримайте актуальний прайс.»</div><div class="hm"><span>Кому + вигода</span>FrankoLab · UA · 305 днів</div></div><div class="hk"><div class="hq">«Який інтраоральний сканер підходить вашій практиці?»</div><div class="hm"><span>Корисне питання</span>Stroh &amp; Scheuerpflug · DE · 322 дні</div></div><div class="hk"><div class="hq">«Шукаєте лабораторію, яка дотримується термінів, легко на зв'язку і робить без виправлень?»</div><div class="hm"><span>Три болі разом</span>Scanlab · PL · 143 дні</div></div><div class="hk"><div class="hq">«All-on-4 — одна з найскладніших конструкцій в імплантології.»</div><div class="hm"><span>Експертність</span>Löger &amp; Grothe · DE · 134 дні</div></div><div class="hk"><div class="hq">«Ваш 100% цифровий партнер для стоматологів!»</div><div class="hm"><span>Позиція</span>NP Dental Labor · TR · 213 днів</div></div><div class="hk"><div class="hq">«Один сканер — добре. Два — краще.»</div><div class="hm"><span>Несподіванка</span>Dandy · DE · 72 дні</div></div><div class="hk"><div class="hq">«Шукаєте лабораторію, яка розуміє, що ваш час у кріслі безцінний?»</div><div class="hm"><span>Цінність часу лікаря</span>CeramShape · PL · 34 дні</div></div><div class="hk"><div class="hq">«Ваша лабораторія зараз у відпустці?»</div><div class="hm"><span>Ситуація «тут і зараз»</span>Hexa Ceram · GB · 18 днів</div></div><div class="hk"><div class="hq">«Перші три роботи скажуть більше, ніж будь-яка реклама.»</div><div class="hm"><span>Зняття ризику</span>Zirkondan.lab · UA · нове</div></div><div class="hk"><div class="hq">«Переробки коштують вам не лише часу, а й довіри пацієнта.»</div><div class="hm"><span>Біль + наслідок</span>Zirkondan.lab · UA · нове</div></div></div>
-  <div class="hside"><div class="kicker">Формула, що повторюється</div>
-   <p><b>Кому</b> — «Працюєте в концепціях ALL-ON-X?», «Стоматолог або керівник клініки?»</p>
-   <p><b>Біль</b> — переробки, корекції, терміни, «важко зв'язатися».</p>
-   <p><b>Наслідок</b> — «коштує довіри пацієнта», «час у кріслі».</p>
-   <p><b>Вихід</b> — прайс, перша робота, вебінар.</p>
-   <div class="kicker" style="margin-top:5mm">Чого не видно в жодному хуку</div>
-   <p>Хто саме робитиме роботу. Жодна лабораторія не починає з техніка, який веде лікаря.</p></div></div>
- <div class="src">Джерело: перші рядки 114 оголошень для лікарів, Бібліотека реклами Meta, знято 2026-11-15; відсортовано за тривалістю показу. Іноземні — переклад MESHKOR.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">5</span></span></div></section><section class="page "><div class="kicker">01 · Пропозиції на вході</div><h2>Як конкуренти знімають страх першої роботи: <em>8 пропозицій</em></h2>
- <p class="lead" style="font-size:9.5pt">Головне, що зупиняє лікаря, за опитуванням Kologrivov, — невідомість і страх не отримати очікуваний результат. Ось як цей бар'єр знімають інші.</p>
- <table class="tb"><thead><tr><th style="width:44mm">Пропозиція</th><th style="width:44mm">Хто</th><th>Як звучить</th><th style="width:52mm">Що потрібно лабораторії</th><th style="width:58mm">Чи підходить Kologrivov</th></tr></thead><tbody><tr><td><b>Прайс за заявку</b></td><td>FrankoLab · UA</td><td>«Залишайте заявку та отримайте актуальний прайс»</td><td>Лід-форма і менеджер, який швидко відповідає</td><td class="y">Так — ціна не світиться публічно, контакт лікаря залишається</td></tr><tr><td><b>Спецумови на перші роботи</b></td><td>Zirkondan · UA</td><td>«Перші три роботи скажуть більше, ніж будь-яка реклама»</td><td>Зрозумілі умови: що саме отримує новий лікар</td><td class="y">Так — прямо знімає страх «невідомості» з опитування</td></tr><tr><td><b>«Почніть з однієї роботи»</b></td><td>FrankoLab · Google</td><td>Швидке посилання в пошуковому оголошенні</td><td>Сторінка «як почати»: скан, доставка, терміни</td><td class="y">Так</td></tr><tr><td><b>Знижка на першу роботу</b></td><td>Löger &amp; Grothe · DE</td><td>−10% на першу роботу</td><td>Розрахунок маржі</td><td class="p">Частково — прайс уже вважають високим; краще гарантія, ніж знижка</td></tr><tr><td><b>Кредит за реєстрацію</b></td><td>Smile Dental Lab · US</td><td>$100 на перший кейс</td><td>Онлайн-реєстрація лікаря</td><td class="p">Частково — як бонус до першої роботи</td></tr><tr><td><b>Вебінар, курс, воркшоп</b></td><td>Stroh · DE (322 дні), IDentity · UA</td><td>«Який сканер обрати» — 30 хв безкоштовно</td><td>Спікер і тема, корисна лікарю</td><td class="y">Так — засновник є Opinion Leader GC</td></tr><tr><td><b>Сканер у партнерстві</b></td><td>Dandy · DE, Scanlab · PL</td><td>сканер включено; ваучер 7 000 zł на роботи</td><td>Великі вкладення</td><td class="n">Ні на старті</td></tr><tr><td><b>Акційна ціна з дедлайном</b></td><td>Zirkondan · UA</td><td>циркон 1500 грн до кінця листопада</td><td>Готовність конкурувати ціною</td><td class="n">Ні — суперечить преміальній позиції</td></tr></tbody></table>
- <div class="src">Джерела: Бібліотека реклами Meta, Центр прозорості Google Ads, знято 2026-11-15; опитування лікарів — бриф Kologrivov. Оцінка «чи підходить» — рекомендація MESHKOR.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">6</span></span></div></section><section class="page "><div class="kicker">01 · Ціни в рекламі</div><h2>Хто показує ціну в рекламі — <em>і хто свідомо її ховає</em></h2>
- <div class="prw"><div class="prl"><div class="pr"><div class="pv">1500 грн</div><div><b>Циркон, за одиницю</b><span>Zirkondan · UA · для нових партнерів, до кінця листопада</span></div></div><div class="pr"><div class="pv">від 1700 грн</div><div><b>Циркон преміальний, за одиницю</b><span>Livsha · UA · постійна ціна в оголошенні</span></div></div><div class="pr"><div class="pv">150 €</div><div><b>Фрезерування титанової балки</b><span>Zirkondan · UA · за STL-файлом, менш ніж за добу</span></div></div><div class="pr"><div class="pv">140 €</div><div><b>Титанова балка All-in-4</b><span>Aspect-lab · UA · All-in-5 і більше — від 160 €</span></div></div><div class="pr"><div class="pv">від 159 €</div><div><b>Коронка з цирконію</b><span>Dandy · DE · 6 днів, гарантія 10 років</span></div></div><div class="pr"><div class="pv">20 000 zł</div><div><b>Інтраоральний сканер</b><span>Scanlab · PL · + ваучер 7 000 zł на роботи лабораторії</span></div></div></div>
-  <div class="decide" style="margin-top:0"><div class="kicker">Що видно</div>
-   <p>Ціну в оголошенні показують ті, хто <b>конкурує ціною</b> або продає <b>вузьку послугу</b> (фрезерування, балки). Найбільший рекламодавець України — FrankoLab — ціни не показує: він дає <b>прайс за заявку</b>.</p>
-   <div class="kicker" style="margin-top:5mm">Рекомендація для Kologrivov</div>
-   <p>Частина лікарів уже вважає прайс Kologrivov високим (опитування). Виходити з ціною в рекламу — програвати Zirkondan і Livsha на їхньому полі. Сильніше: <b>прайс після заявки разом з умовами першої роботи</b> і поясненням, за що лікар платить — техніком, дизайном, контролем.</p></div></div>
- <div class="src">Джерела: тексти оголошень, Бібліотека реклами Meta, знято 2026-11-15; ціни — як вказано в оголошеннях на дату зйомки. Опитування лікарів — бриф Kologrivov.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">7</span></span></div></section><section class="page "><div class="kicker">01 · Куди веде реклама</div><h2>Куди веде реклама — <em>і де губиться лікар</em></h2>
- <div class="fw">
-  <div class="fl"><div class="kicker" style="margin-bottom:3mm">66 оголошень лабораторій України</div>
-   <div class="bar"><span>У месенджер або Instagram<small>«напишіть у Direct», «надіслати повідомлення»</small></span><div class="track"><div class="fill o" style="width:45.5%"></div></div><span class="v">30</span></div>
-   <div class="bar"><span>На сайт<small>сторінка послуг або прайсу</small></span><div class="track"><div class="fill" style="width:27.3%"></div></div><span class="v">18</span></div>
-   <div class="bar"><span>Не вказано<small>без кнопки або посилання</small></span><div class="track"><div class="fill" style="width:27.3%"></div></div><span class="v">18</span></div>
-   <p class="note">Месенджер — найкоротший шлях, але лікар пише «скільки коштує?» і чекає відповіді. Хто відповідає повільно або без умов — втрачає. Сайт без сторінки для лікарів нічого не додає.</p></div>
-  <div class="fr"><div class="kicker" style="margin-bottom:3mm">Рекомендований шлях для Kologrivov</div>
-   <div class="flow">
-    <div class="st"><i>1</i><b>Оголошення</b><span>хук для конкретного лікаря</span></div>
-    <div class="st"><i>2</i><b>Лід-форма Meta</b><span>ім'я, клініка, телефон, тип робіт; питання «Ви лікар чи клініка?»</span></div>
-    <div class="st"><i>3</i><b>Дзвінок техніка</b><span>протягом години, не менеджера</span></div>
-    <div class="st"><i>4</i><b>Прайс + умови першої роботи</b><span>письмово, з термінами</span></div>
-    <div class="st o"><i>5</i><b>Перша робота → закріплений технік</b><span>лікар знає, хто веде його роботи</span></div>
-   </div></div></div>
- <div class="src">Джерело: колонка «посадочна» 66 оголошень лабораторій України для лікарів, Бібліотека реклами Meta, знято 2026-11-15. Шлях 1–5 — рекомендація MESHKOR.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">8</span></span></div></section><section class="page "><div class="kicker">02 · Підбірка: Meta, Україна (1/2)</div><h2>Що показують лабораторії України — <em>і що з цього взяти</em></h2><div class="gal"><div class="card">
-  <div class="ph"><img src="thumbs/ua_frankolab_1179415320929344.jpg" alt="" class=""><span class="tag">UA · ФОТО</span></div>
-  <div class="tx"><div class="dur">305 днів · активне</div>
-    <h3>FrankoLab<span> · Івано-Франківськ</span></h3>
-    <p class="say">«Працюєте в концепціях ALL-ON-X? Ми готові довершити Вашу роботу надійною конструкцією.» Далі — точність, терміни, логістика.</p>
-    <p class="take"><b>Взяти:</b> Звертатися до лікаря за типом роботи (хірург, All-on-X), а не «до всіх стоматологів».</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1179415320929344">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/ua_frankolab_838149315880686.jpg" alt="" class=""><span class="tag">UA · ФОТО</span></div>
-  <div class="tx"><div class="dur">303 дні</div>
-    <h3>FrankoLab<span> · Івано-Франківськ</span></h3>
-    <p class="say">«Втомились від постійних переробок, корекцій і нагадування лабораторії про терміни?» — біль лікаря першим рядком, далі «актуальний прайс» за заявку.</p>
-    <p class="take"><b>Взяти:</b> Починати з болю лікаря його словами: переробки, корекції, терміни.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-838149315880686">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/ua_zirkondan_1288576183114338.jpg" alt="" class=""><span class="tag">UA · ВІДЕО</span></div>
-  <div class="tx"><div class="dur">7 днів</div>
-    <h3>Zirkondan.lab<span></span></h3>
-    <p class="say">«Перші три роботи скажуть більше, ніж будь-яка реклама.» Спецумови на перші роботи для нових партнерів.</p>
-    <p class="take"><b>Взяти:</b> Знижувати ризик першої роботи — саме його лікарі в опитуванні Kologrivov називають головним страхом.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1288576183114338">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/ua_zirkondan_1456271224236469.jpg" alt="" class=""><span class="tag">UA · ВІДЕО</span></div>
-  <div class="tx"><div class="dur">нове, 1 день</div>
-    <h3>Zirkondan.lab<span></span></h3>
-    <p class="say">«Переробки коштують вам не лише часу, а й довіри пацієнта.» Контроль кожного етапу, гарантія, циркон для нових партнерів 1500 грн/од.</p>
-    <p class="take"><b>Взяти:</b> Біль + гарантія + ціна для нових в одному оголошенні.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1456271224236469">Дивитися в каталозі ↗</a></div></div></div>
- <div class="src">Джерело: Бібліотека реклами Meta, знято 2026-11-15. Тривалість — від старту до сьогодні або до кінця показу. Цитати іноземних оголошень — переклад MESHKOR. Усі оголошення з відео та фото — у каталозі.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">9</span></span></div></section><section class="page "><div class="kicker">02 · Підбірка: Meta, Україна (2/2)</div><h2>Що показують лабораторії України — <em>і що з цього взяти</em></h2><div class="gal"><div class="card">
-  <div class="ph"><img src="thumbs/ua_livsha_2045329306167591.jpg" alt="" class=""><span class="tag">UA · ВІДЕО</span></div>
-  <div class="tx"><div class="dur">23 дні · активне</div>
-    <h3>Livsha Lab<span></span></h3>
-    <p class="say">«Понад 200 стоматологів довіряють.» Циркон від 1700 грн/од., персональний менеджер, фотопротокол, безкоштовна доставка.</p>
-    <p class="take"><b>Взяти:</b> Одна цифра-доказ і одна конкретна ціна замість «якісно та надійно».</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-2045329306167591">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/ua_identity_1455205175938762.jpg" alt="" class=""><span class="tag">UA · ФОТО</span></div>
-  <div class="tx"><div class="dur">6 днів · активне</div>
-    <h3>IDentity Lab<span> · Одеса</span></h3>
-    <p class="say">Лабораторія рекламує не роботи, а дводенний курс для лікарів «Функціональна стоматологія» в Одесі. 12 оголошень — найбільше після FrankoLab.</p>
-    <p class="take"><b>Взяти:</b> Навчання як вхід до лікаря: прийшов на курс — знає лабораторію.</p><p class="skip"><b>Не брати:</b> Курс — окремий продукт; без пропозиції співпраці він не приводить замовлення сам.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1455205175938762">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/ua_fordental_917958421315718.jpg" alt="" class=""><span class="tag">UA · ФОТО</span></div>
-  <div class="tx"><div class="dur">3 дні</div>
-    <h3>For Dental<span> · Дніпро</span></h3>
-    <p class="say">«Шукаєте надійну лабораторію? Втомилися від корекцій та зривів термінів?» Перелік матеріалів, «напишіть у Direct».</p>
-    <p class="take"><b>Взяти:</b> Сильний перший рядок про корекції та терміни.</p><p class="skip"><b>Не брати:</b> Єдиний шлях — Direct в Instagram: лікар не бачить умов і цін до розмови.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-917958421315718">Дивитися в каталозі ↗</a></div></div><div class="card sum"><div class="tx"><div class="kicker">Що спільне в Україні</div>
- <p>Найдовше живуть оголошення, які <b>звертаються до конкретного лікаря</b> і <b>називають його біль</b>: переробки, терміни, All-on-X.</p>
- <p>Ціну прямо в оголошенні показують 4 лабораторії з 12, умови для нових — 2.</p>
- <p>30 з 66 оголошень ведуть у месенджер або Instagram, лише 18 — на сайт.</p></div></div></div>
- <div class="src">Джерело: Бібліотека реклами Meta, знято 2026-11-15. Тривалість — від старту до сьогодні або до кінця показу. Цитати іноземних оголошень — переклад MESHKOR. Усі оголошення з відео та фото — у каталозі.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">10</span></span></div></section><section class="page "><div class="kicker">02 · Підбірка: Meta, світ (1/2)</div><h2>Туреччина: оголошення, які <em>крутяться понад рік</em></h2><div class="gal"><div class="card">
-  <div class="ph"><img src="thumbs/tr_focuss_742381155207373.jpg" alt="" class=""><span class="tag">TR · ФОТО</span></div>
-  <div class="tx"><div class="dur">464 дні · активне</div>
-    <h3>Focuss Dental<span> · Туреччина</span></h3>
-    <p class="say">«Лабораторія-експерт у цифрових технологіях»: перелік робіт — монолітні коронки, реставрації на титані, E.max, All-on-4/All-on-6.</p>
-    <p class="take"><b>Взяти:</b> Фото реальної роботи на імплантах + чіткий перелік того, що лабораторія робить.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-742381155207373">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/tr_yunev_1104885645169464.jpg" alt="" class=""><span class="tag">TR · ВІДЕО 0:40</span></div>
-  <div class="tx"><div class="dur">403 дні · активне</div>
-    <h3>Yunev Dental Lab<span> · Туреччина</span></h3>
-    <p class="say">Ліцензована лабораторія з повним обладнанням: відео цеху, техніки за роботою, цифрові рішення на кожному етапі.</p>
-    <p class="take"><b>Взяти:</b> Відео виробництва 30–40 с: лікар бачить, де і як роблять його роботу.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1104885645169464">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/tr_np_1420607273173558.jpg" alt="" class=""><span class="tag">TR · ВІДЕО 0:22</span></div>
-  <div class="tx"><div class="dur">213 днів</div>
-    <h3>NP Dental Labor<span> · Туреччина</span></h3>
-    <p class="say">«Ваш 100% цифровий партнер для стоматологів.» 60 років досвіду, імплантати, балочні системи — швидко й точно.</p>
-    <p class="take"><b>Взяти:</b> Слово «партнер» і досвід цифрою в першому рядку.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1420607273173558">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/de_stroh_1099556742285509.jpg" alt="" class="contain"><span class="tag">DE · ФОТО</span></div>
-  <div class="tx"><div class="dur">322 дні</div>
-    <h3>Stroh &amp; Scheuerpflug<span> · Німеччина</span></h3>
-    <p class="say">«Який інтраоральний сканер підходить вашій практиці?» Безкоштовний 30-хвилинний онлайн-воркшоп для лікарів.</p>
-    <p class="take"><b>Взяти:</b> Корисний вебінар як вхід до співпраці: лабораторія — експерт, а не продавець.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1099556742285509">Дивитися в каталозі ↗</a></div></div></div>
- <div class="src">Джерело: Бібліотека реклами Meta, знято 2026-11-15. Тривалість — від старту до сьогодні або до кінця показу. Цитати іноземних оголошень — переклад MESHKOR. Усі оголошення з відео та фото — у каталозі.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">11</span></span></div></section><section class="page "><div class="kicker">02 · Підбірка: Meta, світ (2/2)</div><h2>Польща, Німеччина, США: <em>як знижують ризик першої роботи</em></h2><div class="gal"><div class="card">
-  <div class="ph"><img src="thumbs/pl_scanlab_1843845356311753.jpg" alt="" class=""><span class="tag">PL · ВІДЕО 0:30</span></div>
-  <div class="tx"><div class="dur">143 дні</div>
-    <h3>Scanlab<span> · Польща</span></h3>
-    <p class="say">«Шукаєте лабораторію, яка дотримується термінів, легко на зв'язку і робить без виправлень?» 20 оголошень з цим відео.</p>
-    <p class="take"><b>Взяти:</b> Три болі лікаря одним питанням: терміни, зв'язок, виправлення.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1843845356311753">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/de_loeger_1001576132419911.jpg" alt="" class="contain"><span class="tag">DE · ФОТО</span></div>
-  <div class="tx"><div class="dur">134 дні</div>
-    <h3>Löger &amp; Grothe<span> · Німеччина</span></h3>
-    <p class="say">«All-on-4 — одна з найскладніших конструкцій в імплантології», тому потрібен досвід; відкриті STL-файли, −10% на першу роботу.</p>
-    <p class="take"><b>Взяти:</b> Складність тоталу як аргумент за експертну лабораторію + знижка на першу роботу.</p><p class="skip"><b>Не брати:</b> Банер перевантажений текстом — у стрічці не читається.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1001576132419911">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/de_dandy_1431095782328744.jpg" alt="" class=""><span class="tag">DE · ФОТО</span></div>
-  <div class="tx"><div class="dur">31 день · активне</div>
-    <h3>Dandy<span> · Німеччина</span></h3>
-    <p class="say">«Якість Кудамму — ціни Кройцберга»: коронка з цирконію від 159 €, 6 днів виготовлення, 10 років гарантії.</p>
-    <p class="take"><b>Взяти:</b> Ціна, термін і гарантія одним рядком — умови видно до першого дзвінка.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1431095782328744">Дивитися в каталозі ↗</a></div></div><div class="card">
-  <div class="ph"><img src="thumbs/us_smile_1608029670533828.jpg" alt="" class=""><span class="tag">US · ФОТО</span></div>
-  <div class="tx"><div class="dur">35 днів · активне</div>
-    <h3>Smile Dental Lab<span> · США</span></h3>
-    <p class="say">«Ваш наступний кейс починається тут»: $100 кредиту на першу роботу за реєстрацію, безкоштовна доставка, цифровий процес.</p>
-    <p class="take"><b>Взяти:</b> Бонус на перший кейс — простий привід спробувати лабораторію.</p>
-    <a href="https://kologrivov.meshkor.io/reklama/catalog/#ad-1608029670533828">Дивитися в каталозі ↗</a></div></div></div>
- <div class="src">Джерело: Бібліотека реклами Meta, знято 2026-11-15. Тривалість — від старту до сьогодні або до кінця показу. Цитати іноземних оголошень — переклад MESHKOR. Усі оголошення з відео та фото — у каталозі.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">12</span></span></div></section><section class="page "><div class="kicker">02 · Підбірка: Google</div><h2>Три лабораторії в пошуку Google: <em>що вони пишуть лікарю</em></h2><div class="gg"><div class="gb"><h3>FrankoLab</h3><div class="gm">8 оголошень · Івано-Франківськ · показ до 14.11.2026</div>
-  <a class="gi" href="https://kologrivov.meshkor.io/reklama/catalog/#google"><img src="thumbs/g_frankolab_CR18164101183721963521.png" alt=""><img src="thumbs/g_frankolab_CR10260161937924947969.png" alt=""></a><ul><li>«Зуботехнічна лабораторія — Тільки для клінік і лікарів»</li><li>«Приймаємо STL з будь-якого IOS» (3Shape, Medit, iTero, Primescan)</li><li>«Один менеджер на всі замовлення клініки»</li><li>Швидкі посилання: «Почніть з однієї роботи», «40 спеціалізованих техніків», «Більше 100 партнерських клінік»</li></ul><p class="take"><b>Взяти:</b> Фільтр «тільки для лікарів» прямо в заголовку і сумісність зі сканерами — лікар одразу розуміє, що це для нього.</p><a class="glink" href="https://kologrivov.meshkor.io/reklama/catalog/#google">Усі оголошення в каталозі ↗</a></div><div class="gb"><h3>Contour Lab</h3><div class="gm">9 оголошень · Львів / Київ · №1 за запитом «зуботехнічна лабораторія» по Україні</div>
-  <a class="gi" href="https://kologrivov.meshkor.io/reklama/catalog/#google"><img src="thumbs/g_contour-lab_CR01737282625912963073.png" alt=""></a><ul><li>«Ми впевнені у точності наших робіт, адже перевіряємо кожну роботу під мікроскопом»</li><li>Заголовки: «Зуботехнічна лабораторія», «Виробництво зубних протезів», «Купити абатмент»</li></ul><p class="take"><b>Взяти:</b> Контроль якості як конкретна процедура («під мікроскопом»), а не слово «контроль».</p><p class="skip"><b>Не брати:</b> Суміш української й російської та запити пацієнтів («ціна акрилових протезів») — розмиває, кому адресовано.</p><a class="glink" href="https://kologrivov.meshkor.io/reklama/catalog/#google">Усі оголошення в каталозі ↗</a></div><div class="gb"><h3>Цифра (Cifra Style)</h3><div class="gm">3 оголошення · Київ · також реклама в Картах</div>
-  <a class="gi" href="https://kologrivov.meshkor.io/reklama/catalog/#google"><img src="thumbs/g_cifra-style_CR11529092665270337537.png" alt=""></a><ul><li>«Ваш надійний партнер у стоматолога!»</li><li>Швидкі посилання: «Співпраця з лабораторією» — для клінік; «Для зубних техніків» — без вихідних</li><li>«Працюємо по всій Україні!»</li></ul><p class="take"><b>Взяти:</b> Окремі входи для клінік і для техніків в одному оголошенні.</p><a class="glink" href="https://kologrivov.meshkor.io/reklama/catalog/#google">Усі оголошення в каталозі ↗</a></div></div>
- <div class="src">Джерело: Центр прозорості Google Ads та видача google.com.ua (uk), знято 2026-11-15; тексти переписано зі знімків оголошень. Кількість — оголошень у Центрі прозорості на дату зйомки.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">13</span></span></div></section><section class="page "><div class="kicker">02 · Google: формати</div><h2>П'ять форматів Google — <em>що кожен дає лабораторії</em></h2>
- <table class="tb gf"><thead><tr><th style="width:62mm">Формат</th><th>Робити</th><th style="width:58mm">Не робити</th><th style="width:50mm">Хто з конкурентів уже використовує</th></tr></thead><tbody><tr><td><b>Пошук</b><span>Оголошення у видачі, коли лікар сам шукає лабораторію або послугу</span></td><td>Окремі групи під тип робіт (тотал на імплантах, вініри, фрезерування за STL); «тільки для лікарів і клінік» у заголовку; мінус-слова пацієнтських запитів</td><td>Змішувати запити лікарів і пацієнтів; українська й російська в одному оголошенні</td><td>Contour Lab, FrankoLab, Цифра</td></tr><tr><td><b>Performance Max</b><span>Одна кампанія на пошук, YouTube, Карти, Gmail і сайти-партнери; Google сам шукає аудиторію</span></td><td>Якісні фото робіт і відео процесу; сигнали аудиторії (відвідувачі сайту, база лікарів); налаштовані конверсії — заявка і дзвінок</td><td>Запускати без конверсій: система піде туди, де дешевше, — до пацієнтів</td><td>не виявлено</td></tr><tr><td><b>Google Карти і профіль компанії</b><span>Лабораторія на карті за запитом «зуботехнічна лабораторія» поруч</span></td><td>Повний профіль: категорія, фото лабораторії й робіт, години, відгуки лікарів; реклама в Картах</td><td>Профіль без відгуків і фото</td><td>Цифра — реклама в Картах; в Одесі в Картах вгорі iDentity (5,0, 88 відгуків) і CreaLAB (4,1, 81)</td></tr><tr><td><b>YouTube і Demand Gen</b><span>Відео в YouTube і стрічках Google</span></td><td>Ті самі відео 20–40 с, що для Meta: процес, тотал з лікарем, техніки</td><td>Рекламні ролики без роботи в кадрі</td><td>FrankoLab — відео з Ivoclar</td></tr><tr><td><b>Ремаркетинг</b><span>Повторний показ лікарям, які були на сайті</span></td><td>Окремі оголошення «повернутися»: кейс + умови першої роботи</td><td>Показувати те саме оголошення, яке лікар уже бачив</td><td>не виявлено</td></tr></tbody></table>
- <div class="src">Джерела: Центр прозорості Google Ads (формати оголошень конкурентів), Google Карти, знято 2026-11-15. Колонки «Робити / Не робити» — рекомендації MESHKOR.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">14</span></span></div></section><section class="page "><div class="kicker">03 · Висновки</div><h2>Робити і не робити: <em>що показала реклама конкурентів</em></h2>
- <div class="dd"><div class="col do"><div class="ch">Робити</div><ul><li><b>Звертатися до конкретного лікаря</b><span>«Працюєте в концепціях ALL-ON-X?» (FrankoLab, 305 днів) · «Тільки для клінік і лікарів» (FrankoLab, Google)</span></li><li><b>Називати біль словами лікаря</b><span>переробки, корекції, терміни, «важко зв'язатися» — FrankoLab, Scanlab, Zirkondan, For Dental</span></li><li><b>Давати один доказ цифрою</b><span>«35 000 конструкцій, 13 країн», «200 стоматологів», «40 техніків», «перевіряємо кожну роботу під мікроскопом»</span></li><li><b>Знижувати ризик першої роботи</b><span>«Почніть з однієї роботи» (FrankoLab), «перші три роботи» (Zirkondan), −10% (Löger &amp; Grothe), $100 кредиту (Smile Dental)</span></li><li><b>Показувати умови до дзвінка</b><span>ціна + термін + гарантія: «коронка від 159 €, 6 днів, 10 років гарантії» (Dandy)</span></li><li><b>Давати користь до продажу</b><span>вебінар «Який сканер обрати» (Stroh, 322 дні), курси для лікарів (IDentity), «приймаємо STL з будь-якого сканера»</span></li></ul></div>
-  <div class="col dont"><div class="ch">Не робити</div><ul><li><b>Загальні слова без доказу</b><span>«гарантуємо якість, точність і відповідальний підхід», «працюємо для Вас» — у вибірці такі оголошення крутились 3 і 10 днів</span></li><li><b>Лише «напишіть у Direct»</b><span>лікар не бачить умов і цін до розмови; в Україні 30 з 66 оголошень ведуть у месенджер або Instagram, на сайт — лише 18</span></li><li><b>«Контроль» без процедури</b><span>слово «контроль» пишуть троє, а що саме перевіряють — лише Contour Lab («під мікроскопом»)</span></li><li><b>Змішувати адресатів</b><span>лікарі, техніки й пацієнти в одному оголошенні або суміш мов — розмиває, кому це</span></li></ul>
-   <div class="useful"><div class="kicker">Корисно знати</div><ul><li>Тривалість показу — найкращий доступний сигнал: бібліотеки не показують заявок і витрат.</li><li>63 зі 114 оголошень для лікарів — відео; половина — до 30 секунд, 51 з 63 — не довші за 40 секунд.</li><li>FrankoLab тримає 23 варіації одночасно — так перевіряють, який текст працює краще.</li><li>Кожне оголошення з цього документа можна відкрити в каталозі — з відео, фото й оцінкою.</li></ul></div></div></div>
- <div class="src">Джерела: Бібліотека реклами Meta (150 оголошень), Центр прозорості Google Ads, знято 2026-11-15. Висновки — спостереження за текстами й тривалістю показу.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">15</span></span></div></section><section class="page "><div class="kicker">03 · Рекомендації</div><h2>П'ять рекламних концепцій для Kologrivov — <em>з того, що працює в інших</em></h2><div class="ccs"><div class="cc"><i>1</i><h3>Один технік — на всі ваші роботи</h3><p class="q">«Ваші роботи веде один технік. Він знає ваші вимоги і відповідає за результат від скану до фінальної перевірки.»</p><p><b>На чому базується:</b> Вільна позиція: 0 з 12 лабораторій; №1 бажання лікарів в опитуванні</p><p><b>Візуал:</b> Портрет техніка за робочим місцем з роботою в руках, ім’я і спеціалізація</p><p><b>Формат:</b> Статика 4:5 + відео 20–30 с «знайомтесь, ваш технік»</p><p class="cond"><b>Умова:</b> Спершу закріпити техніка за кожним лікарем і запровадити фінальну перевірку</p></div><div class="cc"><i>2</i><h3>Тотал на імплантах: дизайн погоджуєте до фрезерування</h3><p class="q">«Цифровий дизайн усмішки — до початку лікування. Ви погоджуєте, ми фрезеруємо.»</p><p><b>На чому базується:</b> All-on-X — найдовші оголошення: FrankoLab 305 днів, Löger &amp; Grothe 134</p><p><b>Візуал:</b> Екран з цифровим дизайном поруч з готовим тоталом на моделі</p><p><b>Формат:</b> Карусель «дизайн → модель → робота» + відео процесу</p><p class="cond"><b>Умова:</b> —</p></div><div class="cc"><i>3</i><h3>Перша робота — щоб переконатися</h3><p class="q">«Надішліть одну роботу. Умови для нових лікарів — у відповідь на заявку.»</p><p><b>На чому базується:</b> «Перші три роботи» (Zirkondan), «Почніть з однієї роботи» (FrankoLab)</p><p><b>Візуал:</b> Одна робота крупно на темному тлі, мінімум тексту</p><p><b>Формат:</b> Статика 4:5 і 9:16 для сторіс, лід-форма</p><p class="cond"><b>Умова:</b> Визначити умови першої роботи</p></div><div class="cc"><i>4</i><h3>GC Competence Lab в Одесі</h3><p class="q">«Сертифікована лабораторія GC Competence Lab. Засновник — Opinion Leader GC.»</p><p><b>На чому базується:</b> Міжнародний статус у рекламі показує лише FrankoLab (Ivoclar, 15 оголошень); GC не згадує ніхто з 12</p><p><b>Візуал:</b> Робота з матеріалів GC + справжній сертифікат лабораторії</p><p><b>Формат:</b> Статика 4:5, банер для Google</p><p class="cond"><b>Умова:</b> —</p></div><div class="cc"><i>5</i><h3>Навчання від Opinion Leader GC</h3><p class="q">«Воркшоп для ортопедів: естетика тоталу на імплантах.»</p><p><b>На чому базується:</b> Вебінар Stroh — 322 дні; курси IDentity — 12 оголошень</p><p><b>Візуал:</b> Засновник з лікарями за робочим столом, дата і тема</p><p><b>Формат:</b> Статика 4:5 + реєстрація через лід-форму</p><p class="cond"><b>Умова:</b> Провести хоча б один воркшоп</p></div></div>
- <div class="src">Концепції — рекомендація MESHKOR на основі підбірки (стор. 9–14) і опитування лікарів із брифу Kologrivov. Тексти — чернетки; промпти для статичних креативів — окремим файлом. «Умова» — що має бути правдою в лабораторії до показу оголошення.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">16</span></span></div></section><section class="page "><div class="kicker">03 · Креативи (1/2)</div><h2>Як виділитися в стрічці лікаря: <em>6 креативів однієї серії</em></h2>
- <div class="rules"><div><b>Темне тло + один оранжевий акцент</b><span>Ті самі кольори, що в знаку Kologrivov: графіт, білий, оранжевий. Колір працює як підпис ще до того, як прочитано логотип.</span></div><div><b>Один предмет, дуже близько</b><span>Не стіл техніка і не «команда», а одна робота в макро. Лікар оцінює роботу очима.</span></div><div><b>Заголовок ≤ 5 слів мовою лікаря</b><span>Скан, рефрактор, абатмент, тотал — слова, які пацієнт пропустить, а лікар зупиниться.</span></div><div><b>Одна сітка на всю серію</b><span>Логотип, рубрика, заголовок, строка для фахівця, призив — завжди на тих самих місцях. Після 2–3 показів серію впізнають.</span></div></div><div class="crs"><div class="cr"><div class="crt"><a class="crimg" href="https://kologrivov.meshkor.io/reklama/creatives/#skan"><img src="thumbs/cr_1_skan.jpg" alt=""></a>
-  <div class="crh"><i>01</i><div class="kicker">Цифра → ремесло</div><h3>«Від вашого скану — до кераміки.»</h3><p>Половина коронки — сітка скану, половина — готова кераміка. Лікар бачить свій файл і результат в одному предметі.</p></div></div>
-  <p class="hk"><b>Чим чіпляє за 1 секунду:</b> Сітка скану — те, що лікар щодня бачить у своїй програмі. Він впізнає її, ще не прочитавши текст.</p>
-  <div class="alt"><div class="kicker">Інші заголовки для цього кадру</div><ul><li>Ваш STL — наша кераміка.</li><li>Цифра на вході. Ручна робота на виході.</li><li>Надішліть скан — отримайте кераміку.</li></ul></div></div><div class="cr"><div class="crt"><a class="crimg" href="https://kologrivov.meshkor.io/reklama/creatives/#total"><img src="thumbs/cr_2_total.jpg" alt=""></a>
-  <div class="crh"><i>02</i><div class="kicker">Імплантологія</div><h3>«Тотал на імплантах.»</h3><p>Тотал усередині ізометричного куба — того самого, що в знаку Kologrivov. Кадр читається як бренд навіть без логотипа.</p></div></div>
-  <p class="hk"><b>Чим чіпляє за 1 секунду:</b> Найдорожча робота для ортопеда — і найдовші оголошення в ніші (FrankoLab — 305 днів). Тема, на яку лікар зупиняється сам.</p>
-  <div class="alt"><div class="kicker">Інші заголовки для цього кадру</div><ul><li>Тотал, який ви погоджуєте до фрезерування.</li><li>All-on-X: від дизайну до балки.</li><li>Цифровий дизайн тоталу — до початку лікування.</li></ul></div><p class="cond"><b>Умова:</b> Сформулювати разом з лабораторією: як саме лікар погоджує дизайн.</p></div><div class="cr"><div class="crt"><a class="crimg" href="https://kologrivov.meshkor.io/reklama/creatives/#keis"><img src="thumbs/cr_3_keis.jpg" alt=""></a>
-  <div class="crh"><i>03</i><div class="kicker">Персонально</div><h3>«Ваш кейс. Ваш технік.»</h3><p>Одна робота у футлярі, як ювелірний виріб; на латунній табличці — «DR. ____», місце для імені лікаря.</p></div></div>
-  <p class="hk"><b>Чим чіпляє за 1 секунду:</b> У рекламі «персонального техніка» не обіцяє жодна з 12 лабораторій України; в опитуванні лікарів це бажання №1.</p>
-  <div class="alt"><div class="kicker">Інші заголовки для цього кадру</div><ul><li>Один технік на всі ваші роботи.</li><li>Технік, який знає ваші вимоги.</li><li>Не черга замовлень — ваш технік.</li></ul></div><p class="cond"><b>Умова:</b> Технік справді закріплений за лікарем.</p></div></div>
- <div class="src">Креативи — пропозиція MESHKOR. Фони згенеровані нейромережею за промптами MESHKOR, текст і логотип накладені поверх. Повний розмір і відео — <a href="https://kologrivov.meshkor.io/reklama/creatives/">kologrivov.meshkor.io/reklama/creatives</a>. «Умова» — що має бути правдою до показу.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">17</span></span></div></section><section class="page "><div class="kicker">03 · Креативи (2/2)</div><h2>Заголовок за секунду: <em>лікар має впізнати своє ще до тексту</em></h2>
- <div class="crs"><div class="cr"><div class="crt"><a class="crimg" href="https://kologrivov.meshkor.io/reklama/creatives/#kontrol"><img src="thumbs/cr_4_kontrol.jpg" alt=""></a>
-  <div class="crh"><i>04</i><div class="kicker">Контроль якості</div><h3>«Кожна робота — під збільшенням.»</h3><p>Погляд крізь окуляр мікроскопа: стик коронки й абатмента, оранжева мірна лінія.</p></div></div>
-  <p class="hk"><b>Чим чіпляє за 1 секунду:</b> Замість слова «контроль», яке пишуть усі, — показати саму перевірку. Лікар бачить край і посадку, як на своєму мікроскопі.</p>
-  <div class="alt"><div class="kicker">Інші заголовки для цього кадру</div><ul><li>Посадку перевіряємо до вас.</li><li>Перевірено під мікроскопом.</li><li>Край, за який не соромно.</li></ul></div><p class="cond"><b>Умова:</b> Фінальна перевірка під збільшенням справді запроваджена.</p></div><div class="cr"><div class="crt"><a class="crimg" href="https://kologrivov.meshkor.io/reklama/creatives/#viniry"><img src="thumbs/cr_5_viniry.jpg" alt=""></a>
-  <div class="crh"><i>05</i><div class="kicker">Естетика</div><h3>«Вініри на рефракторі.»</h3><p>Екстремальне макро ріжучого краю: світло проходить крізь кераміку, видно опалесценцію.</p></div></div>
-  <p class="hk"><b>Чим чіпляє за 1 секунду:</b> Лікар-естетист впізнає «правильний» край за пів секунди — це мова ремесла, а не реклами.</p>
-  <div class="alt"><div class="kicker">Інші заголовки для цього кадру</div><ul><li>Опалесценція, як у живого зуба.</li><li>Тонко. Світло. На рефракторі.</li><li>Вініри з ручним нанесенням кераміки.</li></ul></div></div><div class="cr"><div class="crt"><a class="crimg vid" href="https://kologrivov.meshkor.io/reklama/creatives/#reels"><img src="thumbs/cr_6_reels.jpg" alt=""><span class="play">▶</span></a>
-  <div class="crh"><i>06</i><div class="kicker">Reels · 10 с</div><h3>«Від вашого скану — до кераміки.»</h3><p>Скан перетворюється на кераміку всередині фірмового куба; заголовок друкується по літерах; на 6-й секунді виїжджає кнопка «Надішліть перший скан».</p></div></div>
-  <p class="hk"><b>Чим чіпляє за 1 секунду:</b> Рух з першого кадру (лінія сканування) + текст, що з’являється синхронно з картинкою. Текст і кнопка — у безпечній зоні Reels.</p>
-  <div class="alt"><div class="kicker">Інші заголовки для цього кадру</div><ul><li>Ваш скан. Наша кераміка. 10 секунд.</li><li>Як STL стає коронкою.</li><li>Надішліть перший скан.</li></ul></div></div></div>
- <div class="rules launch"><div class="lk">Як запускати серію</div><div><b>3–4 креативи одночасно</b><span>В одній кампанії — кілька кадрів серії. Meta сама віддасть показ тому, на який лікарі реагують краще.</span></div><div><b>Формат під місце показу</b><span>Стрічка — 4:5 (1080×1350). Reels і сторіс — 9:16 з текстом у безпечній зоні.</span></div><div><b>Оновлювати кожні 2–4 тижні</b><span>Та сама сітка, новий предмет або новий заголовок з переліку «інші заголовки».</span></div><div><b>Рахувати заявки по кожному кадру</b><span>Не кліки, а заявки від лікарів і перші роботи — тоді видно, який заголовок «продає».</span></div></div>
- <div class="src">Креативи — пропозиція MESHKOR. Фони згенеровані нейромережею за промптами MESHKOR, текст і логотип накладені поверх. Повний розмір і відео — <a href="https://kologrivov.meshkor.io/reklama/creatives/">kologrivov.meshkor.io/reklama/creatives</a>. «Умова» — що має бути правдою до показу.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">18</span></span></div></section><section class="page "><div class="kicker">03 · Рекомендації</div><h2>Як зібрати рекламу в Meta для лікарів: <em>схема з п'яти кроків</em></h2><div class="scs"><div class="sc"><div class="sh"><i>1</i>Аудиторія</div><ul><li>Лікарі-стоматологи: ортопеди, хірурги, власники клінік</li><li>Одеса й область — усі види робіт</li><li>Уся Україна — тотали й цифровий дизайн з доставкою</li><li>Фільтр у формі: «Ви лікар чи клініка?»</li></ul></div><div class="sc"><div class="sh"><i>2</i>Креатив</div><ul><li>3–5 концепцій зі стор. 16</li><li>Відео 20–40 с + статика 4:5</li><li>Справжні роботи й техніки в кадрі</li><li>Оновлювати кожні 2–4 тижні</li></ul></div><div class="sc"><div class="sh"><i>3</i>Пропозиція</div><ul><li>Прайс за заявку</li><li>Умови першої роботи</li><li>Закріплений технік</li><li>Без ціни в оголошенні</li></ul></div><div class="sc"><div class="sh"><i>4</i>Куди веде</div><ul><li>Лід-форма Meta з питанням-фільтром</li><li>Або сторінка «Для лікарів» на сайті</li><li>Дзвінок техніка протягом години</li></ul></div><div class="sc"><div class="sh"><i>5</i>Повторний контакт</div><ul><li>Тим, хто переглянув відео на 50%+</li><li>Кейси «до / після» з лікарем</li><li>Нагадування про умови першої роботи</li></ul></div></div>
- <div class="decide" style="margin-top:7mm"><div class="kicker">Що вважати результатом</div><p>Не кліки і не охоплення, а <b>заявка від лікаря</b> і <b>перша робота</b>. Їх варто рахувати окремо з першого дня — інакше неможливо порівняти концепції між собою.</p></div>
- <div class="src">Схема — рекомендація MESHKOR; спирається на підбірку прийомів (стор. 4–14). Конкретні налаштування таргетингу залежать від доступних у Meta категорій на момент запуску.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">19</span></span></div></section><section class="page "><div class="kicker">03 · Матеріали</div><h2>Каталог: <em>кожне оголошення — з відео, фото й оцінкою</em></h2>
- <div class="catw"><div>
-  <p class="lead">Усі оголошення лабораторій для лікарів, які ми знайшли, зібрані в одному каталозі. Відео й фото відкриваються прямо на сторінці — не через Facebook, тому нічого не зникне, якщо конкурент зніме рекламу.</p>
-  <ul class="catl">
-   <li><b>114 оголошень Meta</b> від 40 лабораторій з 6 країн + <b>21 оголошення Google</b></li>
-   <li><b>Під кожним:</b> скільки днів крутиться, активне чи зняте, на що тисне</li>
-   <li><b>Оцінка:</b> «Взяти», «Взяти частково» або «Не брати» — і що саме</li>
-   <li><b>Фільтри:</b> країна, формат, тривалість, оцінка, пошук по тексту</li>
-  </ul></div>
-  <div><div class="catbox"><div class="kicker">Відкрити каталог</div><a class="url" href="https://kologrivov.meshkor.io/reklama/catalog/">kologrivov.meshkor.io/reklama/catalog/</a><p>Сторінка закрита від пошукових систем.</p></div><a href="https://kologrivov.meshkor.io/reklama/catalog/"><img class="catprev" src="thumbs/catalog_preview.jpg" alt=""></a></div></div>
- <div class="src">Каталог зібрано з Бібліотеки реклами Meta і Центру прозорості Google Ads, знято 2026-11-15. Копії відео та фото збережено MESHKOR для аналізу.</div><div class="foot"><span>Kologrivov Dental Design · Дослідження ринку · листопад 2026</span><span class="r"><a href="https://meshkor.io/">Підготовлено MESHKOR · meshkor.io</a> <span class="hex">20</span></span></div></section><script>(function(){function f(){var w=document.documentElement.clientWidth,k=Math.min(1,(w-8)/1123);document.querySelectorAll('.page').forEach(function(p){p.style.zoom=k})}f();addEventListener('resize',f)})()</script></body></html>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(window.Lenis&&!reduce){var l=new Lenis({duration:1.15,smoothWheel:true});(function r(t){l.raf(t);requestAnimationFrame(r)})(0);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(ev){var t=document.querySelector(a.getAttribute('href'));if(t){ev.preventDefault();l.scrollTo(t,{offset:-64})}})})}
+ // появление, полосы, счётчики
+ function count(el){var n=+el.dataset.n,t0=null;function s(t){t0=t0||t;var p=Math.min(1,(t-t0)/1300);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(s)}requestAnimationFrame(s)}
+ var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;var el=x.target;el.classList.add('in');el.querySelectorAll('[data-n]').forEach(count);if(el.matches('[data-n]'))count(el);io.unobserve(el)})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+ document.querySelectorAll('.rv,.kp [data-n]').forEach(function(el,i){var p=el.parentElement,idx=[].indexOf.call(p.children,el);el.style.transitionDelay=Math.min(idx,6)*70+'ms';io.observe(el)});
+ // шапка, прогресс, активный пункт
+ var top=document.querySelector('.top'),prog=document.querySelector('.prog'),links=[].slice.call(document.querySelectorAll('.top nav a'));
+ function onS(){var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;top.classList.toggle('s',y>40);prog.style.width=(y/h*100)+'%';
+  var cur=null;links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=a});links.forEach(function(a){a.classList.toggle('on',a===cur)})}
+ addEventListener('scroll',onS,{passive:true});onS();
+ // вкладки подборки
+ document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+  document.querySelectorAll('.ads').forEach(function(p){p.hidden=p.dataset.p!==b.dataset.t;if(!p.hidden)p.querySelectorAll('.rv').forEach(function(r){r.classList.add('in')})})}});
+ // фон героя: изометрическая сетка шестигранников, медленно плывёт
+ var c=document.querySelector('.hero canvas'),g=c.getContext('2d'),W,H,dpr=Math.min(2,devicePixelRatio||1);
+ function rs(){W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0)}rs();addEventListener('resize',rs);
+ function hex(x,y,r,a){g.beginPath();for(var k=0;k<6;k++){var t=(60*k-90)*Math.PI/180;g.lineTo(x+r*Math.cos(t),y+r*Math.sin(t))}g.closePath();g.strokeStyle='rgba(255,255,255,'+a+')';g.stroke()}
+ function draw(t){g.clearRect(0,0,W,H);var r=46,dx=r*Math.sqrt(3),dy=r*1.5,off=(t/90)%dy;g.lineWidth=1;
+  for(var row=-2;row<H/dy+2;row++)for(var col=-1;col<W/dx+2;col++){var x=col*dx+(row%2?dx/2:0),y=row*dy-off+dy;var d=Math.hypot(x-W*.78,y-H*.42);var a=Math.max(0,.16-d/4200);if(a>.01)hex(x,y,r,a)}
+  var cx=W*.78,cy=H*.42,R=Math.min(W,H)*.26,p=reduce?1:Math.min(1,t/2200);g.lineWidth=2;g.strokeStyle='rgba(245,98,47,.9)';g.shadowColor='rgba(245,98,47,.8)';g.shadowBlur=18;
+  var P=[];for(var k=0;k<6;k++){var q=(60*k-90)*Math.PI/180;P.push([cx+R*Math.cos(q),cy+R*Math.sin(q)])}
+  var segs=[];for(k=0;k<6;k++)segs.push([P[k],P[(k+1)%6]]);segs.push([[cx,cy],P[1]],[[cx,cy],P[5]],[[cx,cy],P[3]]);var L=p*segs.length;
+  g.beginPath();segs.forEach(function(s,i){if(i>=L)return;var f=Math.min(1,L-i);g.moveTo(s[0][0],s[0][1]);g.lineTo(s[0][0]+(s[1][0]-s[0][0])*f,s[0][1]+(s[1][1]-s[0][1])*f)});g.stroke();g.shadowBlur=0;
+  if(!reduce)requestAnimationFrame(draw)}
+ requestAnimationFrame(draw);
+})();
+</script></body></html>
